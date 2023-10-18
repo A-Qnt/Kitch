@@ -1,0 +1,652 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-size: 60px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* background-color: black; */
+    background-color: black;
+}
+
+
+/*  header */
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 250px;
+    background-image: url('../img/photo-band/wood.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/*  logo */
+.logo {
+    float: left;
+    margin-left: 20px;
+}
+
+.logo img {
+    height: 250px;
+}
+
+/*  navbar */
+.navbar {
+    margin-right: 50px;
+    margin-top: 75px;
+}
+
+/* boutons de la navbar */
+.navbar a {
+    text-align: center;
+    font-family: 'Bayon', monospace;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    width: 180px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 0 20px;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    text-align: center;
+    font-family: 'Bayon', monospace;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    width: 180px;
+    background-color: #fff;
+    color: #000000;
+    border: none;
+    padding: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 0 20px;
+    border-radius: 5px;
+}
+
+/* espacer les boutons de la navbar */
+.navbar button:first-child {
+    margin-left: 0;
+}
+
+
+/* footer */
+
+.footer {
+    background-image: url('../img/photo-band/kitchblackfooter.jpg');
+    background-size: cover;
+    background-position: center;
+    position: sticky;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left img {
+    height: 200px;
+}
+
+.footer-center {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Espacement entre les icônes des réseaux sociaux */
+
+}
+
+.footer-center a img {
+    height: 120px;
+    /* Ajustez la taille des icônes selon vos besoins */
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    align-items: end;
+}
+
+
+.footer-right a {
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Poppins', monospace;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.footer-right a:hover {
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Poppins', monospace;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+/* cards */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 380px;
+    /* Largeur fixe de la carte */
+    max-height: 600px;
+    /* Hateur maximum de la carte */
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+
+}
+
+/* Style de l'image */
+.card-image {
+    width: 100%;
+    /* Taille de l'image fixe à 100% de la largeur de la carte */
+    max-height: 200px;
+    /* Hauteur maximale de l'image */
+    object-fit: cover;
+    /* Redimensionner l'image pour remplir la boîte tout en conservant son ratio */
+}
+
+/* Style du titre */
+.card-title {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    /* Espacement de 10px entre l'image et le titre */
+    margin-bottom: 0;
+    /* Supprimer la marge par défaut sous le titre */
+}
+
+/* Style du descriptif */
+.card-description {
+    font-size: 22px;
+    margin-top: 10px;
+    /* Espacement de 10px entre le titre et le descriptif */
+    color: #666;
+}
+
+/* bandeau d'annonce du nouvel album */
+
+.announcement {
+    background-color: #000000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.announcement img {
+    width: 300px;
+}
+
+.announcement-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.announcement-content h3 {
+    font-size: 50px;
+    margin-left: 30px;
+}
+
+.announcement-content p {
+    font-size: 40px;
+    margin-left: 30px;
+}
+
+.btnspotify {
+    width: 400px;
+    margin-left: 30px;
+    font-size: 40px;
+    background-color: #1DB954;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.btnspotify:hover {
+    background-color: #188b40;
+}
+
+
+
+
+/* Titre de la page BAND */
+
+.titleband {
+    color: white;
+    background-color: black;
+    padding: 20px 0;
+}
+
+.titleband h2 {
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: 'Bayon', monospace;
+}
+
+.titleband h2 {
+    display: flex;
+}
+
+.titleband h2::before,
+.titleband h2::after {
+    content: "";
+    flex: 1;
+    align-self: center;
+    border-bottom: 2px solid CurrentColor;
+}
+
+.titleband h2::before {
+    margin-right: 40px;
+    margin-left: 40px
+}
+
+.titleband h2::after {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+
+
+/* Déscription du groupe  */
+.photoMobile {
+    display: none;
+}
+
+.infoKitch {
+    display: flex;
+    background-color: black;
+}
+
+.infoKitch .description {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 40px 20px;
+    width: 50%;
+}
+
+.infoKitch .description img {
+    padding-top: 50px;
+}
+
+.infoKitch .photo {
+    width: 50%;
+    padding: 20px 20px 40px 20px;
+}
+
+.infoKitch .photo img {
+    width: 100%;
+}
+
+.infoKitch h2 {
+    color: white;
+    font-size: 40px;
+}
+
+.infoKitch p {
+    color: white;
+    font-size: 22px;
+    text-align: justify;
+}
+
+
+
+/* Portraits des membre du groupe  */
+
+.portrait {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black
+}
+
+.portraitCard img {
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    transition: all 1s;
+}
+
+.portraitCard:hover img {
+    -webkit-filter: saturate(200%);
+    transform: scale(1.05);
+}
+
+.portraitCard p {
+    opacity: 0%;
+    transition: opacity 1s;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.portraitCard:hover p {
+    opacity: 100%;
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.portraitCard {
+    width: 25%;
+    position: relative;
+}
+
+/* CARDS DES DATE DE CONCERT DU TOUR */
+
+.ticket-container {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+.ticket {
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+    margin: auto;
+    margin-bottom: 30px;
+    display: flex;
+    background-color: white;
+    width: 800px;
+    height: 300px;
+    border-radius: 15px;
+}
+
+.leftSide {
+    position: relative;
+    width: 300px;
+}
+
+.leftSide img {
+    width: 300px;
+    height: 300px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.leftSide p {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    position: absolute;
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 25px;
+    width: 100%;
+
+}
+
+.rightSide .date {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 2px black;
+    border-top: solid 2px black;
+}
+
+.rightSide .date p {
+    font-family: 'lack';
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.rightSide .date p span {
+    font-family: 'lack';
+    font-size: 35px;
+    font-weight: 700;
+    color: #eb4be3;
+}
+
+.rightSide .groupe {
+    text-align: center;
+    font-family: 'Franklin Gothic Heavy';
+    font-size: 45px;
+    font-weight: 700;
+    color: #2f91e0;
+    margin: 10px 0;
+}
+
+.rightSide .horaire p {
+    font-family: 'open sans';
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.rightSide .horaire p span {
+    font-family: 'open sans';
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.rightSide .lieu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rightSide .lieu p {
+    font-family: 'open sans';
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+
+/* Style page projet  */
+
+/* bandeau */
+
+.albums {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px;
+    justify-content: space-evenly;
+}
+
+.albums a img {
+    width: 400px;
+    height: 400px;
+}
+
+.album-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    color: white;
+}
+
+.album-title h2 {
+    font-size: 70px;
+}
+
+.album-title h3 {
+    font-size: 30px;
+    font-family: 'Open sans';
+    margin-bottom: 15px;
+}
+
+.bandeau {
+    display: flex;
+    justify-content: start;
+    background-color: #000000;
+    height: 500px;
+    width: 95%;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 35px;
+}
+
+
+.left-bandeau img {
+    height: 100%;
+}
+
+.left-bandeau {
+    text-align: center;
+    width: 30%;
+}
+
+.mid-bandeau {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.mid-bandeau .album-title {
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+.mid-bandeau .tracks {
+    display: flex;
+    width: 500px;
+    justify-content: space-around;
+
+}
+
+
+.mid-bandeau .tracks .tracks-left ul li,
+.mid-bandeau .tracks .tracks-right ul li {
+    text-align: start;
+    font-family: 'Open sans';
+    font-size: 35px;
+}
+
+.right-bandeau {
+    text-align: center;
+    width: 30%;
+}
+
+.right-bandeau h3 {
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 40px;
+}
+
+.right-bandeau p {
+    text-align: justify;
+    font-family: 'Open sans';
+    font-size: 25px;
+    padding: 0 15px;
+}
+
+
+
+
+
+
+
+
+
+/* style du formulaire */
+
+.container {
+    margin: 10px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #000000;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+label {
+    margin: 0;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding-left: 10px;
+    padding: 5px 0;
+    caret-color: white;
+    color: white;
+    font-size: 25px;
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: black;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 150px;
+}
+
+.btn {
+    text-align: center;
+    width: 150px;
+    font-size: 30px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: solid 1px white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    color: black;
+}

@@ -1,0 +1,920 @@
+/* HEADER responsive sur smartphone */
+@media screen and (max-width: 480px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        height: 250px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-image: url('../img/photo-band/wood.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .navbar {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+    }
+
+    .navbar a {
+        background-color: black;
+        color: white;
+        font-size: 18px;
+        font-family: 'poppins', monospace;
+        margin: 0;
+        padding: 0;
+        width: 90px;
+        border-radius: 2px;
+    }
+
+    .navbar a:hover {
+        background-color: white;
+        color: black;
+        font-size: 18px;
+        font-family: 'poppins', monospace;
+        margin: 0;
+        padding: 0;
+        width: 90px;
+        border-radius: 2px;
+    }
+
+
+
+    /* logo */
+
+    .logo {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+        height: 200px;
+    }
+
+    .logo img {
+        height: 200px;
+    }
+}
+
+/* le titre bandeau avec liseret sur  les coté pour chaque page */
+@media screen and (max-width: 480px) {
+    .titleband {
+        color: white;
+        background-color: black;
+        padding: 10px 0;
+    }
+
+    .titleband h2 {
+        text-align: center;
+        font-size: 35px;
+        text-transform: uppercase;
+        font-family: 'Bayon', monospace;
+    }
+
+    .titleband h2 {
+        display: flex;
+    }
+
+    .titleband h2::before,
+    .titleband h2::after {
+        content: "";
+        flex: 1;
+        align-self: center;
+        border-bottom: 2px solid CurrentColor;
+    }
+
+    .titleband h2::before {
+        margin-right: 20px;
+        margin-left: 20px
+    }
+
+    .titleband h2::after {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+
+/* HEADER responsive sur tablette */
+
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-image: url('../img/photo-band/wood.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .navbar {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 10px;
+        margin-bottom: 15px;
+
+    }
+
+    .navbar a {
+        background-color: black;
+        color: white;
+        font-size: 25px;
+        font-family: 'poppins', monospace;
+        margin: 0;
+        padding: 0;
+        width: 150px;
+        border-radius: 5px;
+    }
+
+    .navbar a:hover {
+        background-color: white;
+        color: black;
+        font-size: 18px;
+        font-family: 'poppins', monospace;
+        margin: 0;
+        padding: 0;
+        width: 90px;
+        border-radius: 2px;
+    }
+
+
+
+    /* logo */
+
+    .logo {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+        height: 250px;
+    }
+
+    .logo img {
+        height: 250px;
+    }
+}
+
+/* FOOTER responsive sur smartphones */
+@media screen and (max-width: 480px) {
+    .footer {
+        background-image: url('../img/photo-band/kitchblackfooter.jpg');
+        background-size: cover;
+        background-position: center;
+        position: sticky;
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-left img {
+        height: 200px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-center {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        /* Espacement entre les icônes des réseaux sociaux */
+
+    }
+
+    .footer-center a img {
+        height: 60px;
+        /* Ajustez la taille des icônes selon vos besoins */
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .footer-right a {
+        text-align: center;
+        font-family: 'Poppins', monospace;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .footer-right a:hover {
+        text-align: center;
+        font-family: 'Poppins', monospace;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        background-color: #ffffff;
+        color: #000000;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+
+}
+
+
+
+/* FOOTER responsive sur tablette */
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+    .footer {
+        background-image: url('../img/photo-band/kitchblackfooter.jpg');
+        background-size: cover;
+        background-position: center;
+        position: sticky;
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-left img {
+        height: 200px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-center {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        /* Espacement entre les icônes des réseaux sociaux */
+
+    }
+
+    .footer-center a img {
+        height: 60px;
+        /* Ajustez la taille des icônes selon vos besoins */
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .footer-right a {
+        text-align: center;
+        font-family: 'Poppins', monospace;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .footer-right a:hover {
+        text-align: center;
+        font-family: 'Poppins', monospace;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        background-color: #ffffff;
+        color: #000000;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+}
+
+
+/* HOME content responsive smartphone et tablette */
+@media screen and (max-width: 480px) {
+    .announcement {
+        background-color: #000000;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        width: 100vw;
+    }
+
+    .announcement img {
+        width: 280px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .announcement-content {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .announcement-content h3 {
+        margin: 0;
+        padding: 0;
+        font-size: 40px;
+
+    }
+
+    .announcement-content p {
+        margin: 0;
+        padding: 0;
+        font-size: 25px;
+
+    }
+
+    .btnspotify {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 70px;
+        margin: 0 auto;
+        font-size: 25px;
+        background-color: #1DB954;
+        color: #fff;
+        border-radius: 10px;
+        font-weight: bold;
+
+    }
+
+    .btnspotify:hover {
+        background-color: #188b40;
+    }
+
+
+}
+
+/* BAND responsive sur smartphones */
+@media screen and (max-width: 480px) {
+
+    /* info et description */
+    .photoMobile {
+        display: block;
+        width: 100%;
+    }
+
+    .photoMobile img {
+        width: 100%;
+    }
+
+    .infoKitch {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+    }
+
+    .infoKitch .description {
+        width: 100%;
+    }
+
+    .infoKitch .description img {
+        padding-top: 50px;
+    }
+
+    .infoKitch .photo {
+        display: none;
+    }
+
+    .infoKitch .photo img {
+        width: 100%;
+    }
+
+    .infoKitch h2 {
+        color: white;
+        font-size: 30px;
+    }
+
+    .infoKitch p {
+        color: white;
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    /* portrait des memebres du groupe*/
+
+    .portrait {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: black
+    }
+
+    .portraitCard img {
+        width: 100%;
+        -webkit-filter: grayscale(100%);
+        transition: all 1s;
+    }
+
+    .portraitCard:hover img {
+        -webkit-filter: saturate(200%);
+        transform: scale(1.05);
+    }
+
+    .portraitCard p {
+        opacity: 0%;
+        transition: opacity 1s;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        color: white;
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    .portraitCard:hover p {
+        opacity: 100%;
+        position: absolute;
+        color: white;
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    .portraitCard {
+        width: 100%;
+        padding: 10px;
+        position: relative;
+    }
+
+
+}
+
+
+
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+    /* info et description */
+    .photoMobile {
+        display: block;
+        width: 100%;
+    }
+
+    .photoMobile img {
+        width: 100%;
+    }
+
+    .infoKitch {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+    }
+
+    .infoKitch .description {
+        width: 100%;
+    }
+
+    .infoKitch .description img {
+        padding-top: 50px;
+    }
+
+    .infoKitch .photo {
+        display: none;
+    }
+
+    .infoKitch .photo img {
+        width: 100%;
+    }
+
+    .infoKitch h2 {
+        color: white;
+        font-size: 40px;
+    }
+
+    .infoKitch p {
+        color: white;
+        font-size: 30px;
+        text-align: justify;
+    }
+
+    /* portrait des memebres du groupe*/
+
+    .portrait {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: black;
+        width: 100%;
+    }
+
+    .portraitCard img {
+        width: 100%;
+        -webkit-filter: grayscale(100%);
+        transition: all 1s;
+    }
+
+    .portraitCard:hover img {
+        -webkit-filter: saturate(200%);
+        transform: scale(1.05);
+    }
+
+    .portraitCard p {
+        opacity: 0%;
+        transition: opacity 1s;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        color: white;
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    .portraitCard:hover p {
+        opacity: 100%;
+        position: absolute;
+        color: white;
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    .portraitCard {
+        width: 50%;
+        position: relative;
+    }
+
+}
+
+/* TOUR responsive sur smartphones */
+
+@media screen and (max-width: 480px) {
+
+    .ticket {
+        box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 300px;
+        height: 600px;
+        border-radius: 10px;
+    }
+
+    .leftSide {
+        position: relative;
+        width: 300px;
+    }
+
+    .leftSide img {
+        width: 300px;
+        height: 300px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .leftSide p {
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        position: absolute;
+        font-size: 25px;
+        font-weight: 700;
+        color: white;
+    }
+
+    .rightSide {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+
+    }
+
+    .rightSide .date {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 2px black;
+        border-top: solid 2px black;
+    }
+
+    .rightSide .date p {
+        font-family: 'lack';
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .rightSide .date p span {
+        font-family: 'lack';
+        font-size: 20px;
+        font-weight: 700;
+        color: #eb4be3;
+    }
+
+    .rightSide .groupe {
+        text-align: center;
+        font-family: 'Franklin Gothic Heavy';
+        font-size: 40px;
+        font-weight: 700;
+        color: #2f91e0;
+        margin: 10px 0;
+    }
+
+    .rightSide .horaire p {
+        font-family: 'open sans';
+        font-size: 15px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .rightSide .horaire p span {
+        font-family: 'open sans';
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .rightSide .lieu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .rightSide .lieu p {
+        font-family: 'open sans';
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+
+
+/* PAGE PROJET responsive sur smartphone */
+
+@media screen and (max-width: 480px) {
+
+    /* Style page projet  */
+
+    /* bandeau */
+
+    .albums {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .albums a img {
+        width: 90vw;
+    }
+
+    .album-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+    }
+
+    .album-title {
+        width: 100%;
+    }
+
+    .album-title h2 {
+        font-size: 45px;
+        text-align: center;
+    }
+
+    .album-title h3 {
+        font-size: 25px;
+        font-family: 'Open sans';
+        margin-bottom: 15px;
+    }
+
+    .album-title h4 {
+        font-size: 25px;
+        font-family: 'Open sans';
+        margin-bottom: 15px;
+    }
+
+    .bandeau {
+        display: flex;
+        flex-direction: column;
+        background-color: #000000;
+        height: auto;
+    }
+
+
+    .left-bandeau img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .left-bandeau {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .mid-bandeau {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .mid-bandeau .album-title {
+        text-align: center;
+        font-family: 'Poppins';
+    }
+
+    .mid-bandeau .tracks {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+
+    }
+
+
+    .mid-bandeau .tracks .tracks-left ul li,
+    .mid-bandeau .tracks .tracks-right ul li {
+        text-align: start;
+        font-family: 'Open sans';
+        font-size: 25px;
+    }
+
+    .right-bandeau {
+        text-align: center;
+        width: 100%;
+    }
+
+    .right-bandeau h3 {
+        text-align: center;
+        font-family: 'Poppins';
+        font-size: 35px;
+    }
+
+    .right-bandeau p {
+        text-align: justify;
+        font-family: 'Open sans';
+        font-size: 25px;
+        padding: 0 15px;
+    }
+
+
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1370px) {
+
+    /* Style page projet  */
+
+    /* bandeau */
+
+    .albums {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+
+    .albums a img {
+        max-width: 400px;
+        height: auto;
+    }
+
+    .album-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+    }
+
+    .album-title {
+        width: 100%;
+    }
+
+    .album-title h2 {
+        font-size: 45px;
+        text-align: center;
+    }
+
+    .album-title h3 {
+        font-size: 25px;
+        font-family: 'Open sans';
+        margin-bottom: 15px;
+    }
+
+    .album-title h4 {
+        font-size: 25px;
+        font-family: 'Open sans';
+        margin-bottom: 15px;
+    }
+
+    .bandeau {
+        display: flex;
+        flex-direction: column;
+        background-color: #000000;
+        height: auto;
+    }
+
+
+    .left-bandeau img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .left-bandeau {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .mid-bandeau {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .mid-bandeau .album-title {
+        text-align: center;
+        font-family: 'Poppins';
+    }
+
+    .mid-bandeau .tracks {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+
+    }
+
+
+    .mid-bandeau .tracks .tracks-left ul li,
+    .mid-bandeau .tracks .tracks-right ul li {
+        text-align: start;
+        font-family: 'Open sans';
+        font-size: 25px;
+    }
+
+    .right-bandeau {
+        text-align: center;
+        width: 100%;
+    }
+
+    .right-bandeau h3 {
+        text-align: center;
+        font-family: 'Poppins';
+        font-size: 35px;
+    }
+
+    .right-bandeau p {
+        text-align: justify;
+        font-family: 'Open sans';
+        font-size: 25px;
+        padding: 0 15px;
+    }
+
+
+}
