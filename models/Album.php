@@ -35,6 +35,7 @@ class Album
             // requête SQL pour ajouter un album avec des marqueurs nominatifs pour faciliter le bindValue
             $sql = 'INSERT INTO `kitch_album` (`album_nom`, `album_date`, `album_description`, `album_cover`)
             VALUES (:title, :date, :description, :cover);'
+   
         }
 
 
