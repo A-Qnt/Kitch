@@ -1,17 +1,13 @@
 <?php include "components/head.php" ?>
 <?php include "components/navbar.php" ?>
-<div class="titleband">
-    <h2>Les albums</h2>
-</div>
-
-<div class="albums">
-    <a href="#"><img src="../assets/img/photo-album/coverhenger.jpg" alt="Image News"></a>
-    <a href="#"><img src="../assets/img/photo-album/covercalame.jpeg" alt="Image News"></a>
-    <a href="#"><img src="../assets/img/photo-album/covernewstrifeland.jpg" alt="Image News"></a>
-</div>
 
 <div class="album-container"><!--div qui contient les bandeaux-->
-    <div class="bandeau"> <!--div d'un bandeau complet-->
+    <div class="albums">
+        <img src="../assets/img/photo-album/coverhenger.jpg" alt="Image News" id="henger">
+        <img src="../assets/img/photo-album/covercalame.jpeg" alt="Image News" id="calame">
+        <img src="../assets/img/photo-album/covernewstrifeland.jpg" alt="Image News" id="nsl">
+    </div>
+    <div id="info1" class="bandeau"> <!--div d'un bandeau complet-->
         <div class="left-bandeau"> <!--div gauche qui contient l'image de l'album-->
             <img src="../assets/img/photo-album/coverhenger.jpg" alt="Image News">
         </div>
@@ -51,8 +47,7 @@
             <p>C’est un album que l’on peut qualifier dans un premier temps de « dark ». Au-delà de la musique, c’est tout un univers sombre, on peut le voir à travers les couleurs de la pochette de l’album faite par Rémy Badout. On peut le qualifier aussi de très expérimental, car c’est une façon de composer propre à nous, on se cherchait encore. C’est un album de découverte, autant entre nous que pour les autres.</p>
         </div>
     </div>
-
-    <div class="bandeau"> <!--div d'un bandeau complet-->
+    <div id="info2" class="bandeau"> <!--div d'un bandeau complet-->
         <div class="left-bandeau"> <!--div gauche qui contient l'image de l'album-->
             <img src="../assets/img/photo-album/covercalame.jpeg" alt="Image News">
         </div>
@@ -92,8 +87,7 @@
             <p>Dans “Calame”, leur nouvel album, Kitch nous propose un voyage dans un monde alternatif qui s’étire du post-rock au trip-hop. Sans vraiment passer par la musique pop. </p>
         </div>
     </div>
-
-    <div class="bandeau"> <!--div d'un bandeau complet-->
+    <div id="info3" class="bandeau"> <!--div d'un bandeau complet-->
         <div class="left-bandeau"> <!--div gauche qui contient l'image de l'album-->
             <img src="../assets/img/photo-album/covernewstrifeland.jpg" alt="Image News">
         </div>

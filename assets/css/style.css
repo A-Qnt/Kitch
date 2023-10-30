@@ -187,10 +187,12 @@ header {
     /* Espacement de 10px entre l'image et le titre */
     margin-bottom: 0;
     /* Supprimer la marge par défaut sous le titre */
+    color: black;
 }
 
 /* Style du descriptif */
-.card-description {
+.card-description,
+.card-date {
     font-size: 22px;
     margin-top: 10px;
     /* Espacement de 10px entre le titre et le descriptif */
@@ -488,15 +490,16 @@ header {
 
 .albums {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     padding: 30px;
-    justify-content: space-evenly;
+    
 }
 
-.albums a img {
+.albums img {
+    margin: 0 20px;
     width: 400px;
     height: 400px;
+    cursor: pointer;
 }
 
 .album-container {
@@ -518,8 +521,13 @@ header {
     margin-bottom: 15px;
 }
 
+.album-title h4 {
+    font-size: 30px;
+}
+
+
 .bandeau {
-    display: flex;
+    display: none;
     justify-content: start;
     background-color: #000000;
     height: 500px;
@@ -527,6 +535,7 @@ header {
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 35px;
+    color: white;
 }
 
 
@@ -563,7 +572,7 @@ header {
 .mid-bandeau .tracks .tracks-right ul li {
     text-align: start;
     font-family: 'Open sans';
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .right-bandeau {

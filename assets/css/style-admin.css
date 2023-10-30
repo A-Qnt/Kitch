@@ -3,7 +3,6 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
-    font-size: 60px;
 }
 
 body {
@@ -13,10 +12,15 @@ body {
 }
 
 .tableau {
+    display: block;
     margin: 20px auto;
     border-radius: 20px;
     width: 95vw;
     overflow: hidden;
+}
+
+.tableSmartphone {
+    display: none;
 }
 
 table {
@@ -28,13 +32,19 @@ table {
 th,
 td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
 
 th {
     background-color: #212121;
     color: white;
-    font-size: 32px;
+    font-size: 36px;
+}
+
+td {
+    width: 300px;
+    color: black;
+    font-size: 28px;
 }
 
 tr:nth-child(even) {
@@ -47,6 +57,7 @@ tr:nth-child(odd) {
 
 .modify-button {
     background-color: #4CAF50;
+    font-size: 28px;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -58,6 +69,7 @@ tr:nth-child(odd) {
 
 .delete-button {
     background-color: #f44336;
+    font-size: 28px;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -65,4 +77,73 @@ tr:nth-child(odd) {
     text-decoration: none;
     display: inline-block;
     border-radius: 5px;
+}
+
+
+/* style pour l'affichage sur smartphone */
+@media screen and (max-width: 480px) {
+    .tableau {
+        display:none ;
+    }
+
+    .tableSmartphone {
+        display: block;
+        width: 95vw;
+        height: auto;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .id {
+        background-color: #212121;
+        color: white;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .id p {
+        font-weight: 700;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .mainCard {
+        width: 100%;
+        background-color: #D9D9D9;
+    }
+
+    #limited-span {
+        color: white;
+    }
+
+
+
+    .descriptionCard,
+    .titleCard,
+    .dateCard,
+    .photoCard {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .titleCard p,
+    .dateCard p,
+    .photoCard p,
+    .descriptionCard p {
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .titleCard span,
+    .dateCard span,
+    .photoCard span,
+    .descriptionCard span {
+        font-size: 30px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
 }

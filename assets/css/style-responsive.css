@@ -534,7 +534,7 @@
         text-align: justify;
     }
 
-    /* portrait des memebres du groupe*/
+    /* portrait des membres du groupe*/
 
     .portrait {
         position: relative;
@@ -588,6 +588,7 @@
     .ticket {
         box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
         margin: auto;
+        margin-bottom: 20px;
         display: flex;
         flex-direction: column;
         background-color: white;
@@ -693,12 +694,19 @@
 
     .albums {
         display: flex;
-        flex-direction: column;
-        margin: 0 auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100vw;
+        padding: 0; 
+        margin: 15px 0;    
     }
 
-    .albums a img {
-        width: 90vw;
+    .albums img {
+        width: 120px;
+        height: auto;
+        padding: 0; 
+        margin: 0;   
     }
 
     .album-container {
@@ -734,7 +742,7 @@
     }
 
     .bandeau {
-        display: flex;
+        display: none;
         flex-direction: column;
         background-color: #000000;
         height: auto;
