@@ -16,7 +16,6 @@ body {
     margin: 20px auto;
     border-radius: 20px;
     width: 95vw;
-    overflow: hidden;
 }
 
 .tableSmartphone {
@@ -26,6 +25,7 @@ body {
 table {
     width: 100%;
     border-collapse: collapse;
+    border: 1px solid black;
 
 }
 
@@ -33,15 +33,42 @@ th,
 td {
     padding: 8px;
     text-align: center;
+    border: 1px solid black;
 }
 
 th {
     background-color: #212121;
     color: white;
     font-size: 36px;
+    width: 300px;
 }
 
 td {
+    color: black;
+    font-size: 28px;
+    height: 60px;
+}
+
+.tableau tr {
+    height: 60px;
+}
+
+.cols {
+    display: flex;
+    width: 300px;
+}
+
+.col1,
+.col2 {
+    width: 150px;
+}
+
+.col1 li,
+.col2 li {
+    width: 100%;
+}
+
+td ol li {
     width: 300px;
     color: black;
     font-size: 28px;
@@ -79,11 +106,52 @@ tr:nth-child(odd) {
     border-radius: 5px;
 }
 
+.description-dashboard {
+    font-size: 0.5em;
+    background-color: red;
+    width: 500px;
+    height: 100px;
+    overflow-y: scroll;
+
+}
+
+.addComposant button {
+    margin-left: 40px;
+    background-color: #2f91e0;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.textoverflow{
+    background-color: red;
+    width: 500px;
+    height: 100px;
+    overflow-y: scroll;
+}
+
+.textoverflow p {
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* style pour l'affichage sur smartphone */
 @media screen and (max-width: 480px) {
     .tableau {
-        display:none ;
+        display: none;
     }
 
     .tableSmartphone {
@@ -93,6 +161,7 @@ tr:nth-child(odd) {
         margin: 20px auto;
         padding: 10px;
     }
+
 
     .id {
         background-color: #212121;
@@ -117,33 +186,32 @@ tr:nth-child(odd) {
 
 
 
-    .descriptionCard,
-    .titleCard,
-    .dateCard,
-    .photoCard {
+    .titlesCard {
         display: flex;
         flex-direction: column;
         padding: 10px;
     }
 
-    .titleCard p,
-    .dateCard p,
-    .photoCard p,
-    .descriptionCard p {
+    .titlesCard p {
         font-size: 40px;
         font-weight: 700;
     }
 
-    .titleCard span,
-    .dateCard span,
-    .photoCard span,
-    .descriptionCard span {
+    .titlesCard span {
         font-size: 30px;
+        overflow: hidden;
     }
+
 
     .buttons {
         display: flex;
         justify-content: space-evenly;
         padding: 10px;
+    }
+
+    .containerChar span {
+        font-size: 0.30em;
+        text-align: justify;
+        overflow: hidden;
     }
 }
