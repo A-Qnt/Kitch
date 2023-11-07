@@ -1,7 +1,34 @@
 <?php include "components/head.php" ?>
 <?php include "components/navbar-admin.php" ?>
-<div class="addComposant">
-    <button>Ajouter du contenu</button>
+<div class="addComposantbutton">
+    <button>Ajouter un article</button>
+</div>
+<div class="addArticleForm">
+    <form action="traitement.php" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="titre">Titre :</label>
+            <input type="text" id="titre" name="titre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Date :</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image :</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description :</label>
+            <textarea id="description" name="description" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn">Ajouter</button>
+        </div>
+    </form>
 </div>
 <div class="tableau">
     <table>
@@ -14,7 +41,7 @@
             <th></th>
             <th></th>
         </tr>
-        <tr>
+        <tr class="testtest">
             <td>1</td>
             <td>nouvel album</td>
             <td>20-10-2023</td>
@@ -89,9 +116,5 @@
             <button class="delete-button">Supprimer</button>
         </div>
     </div>
-</div>
-
-<div class="textoverflow">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione unde aut quisquam deserunt nisi tenetur amet doloremque dolor blanditiis, quod esse, quam odio perspiciatis tempore neque quos labore iste perferendis!</p>
 </div>
 <?php include "components/footer.php" ?>

@@ -1,29 +1,11 @@
-<?php include "components/head.php" ?>
+<?php include "components/head-test.php" ?>
 <?php include "components/navbar.php" ?>
 
-<table>
-    <tr>
-      <th>ID</th>
-      <th>Titre</th>
-      <th>Date</th>
-      <th>Photo</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Titre 1</td>
-      <td>2023-11-01</td>
-      <td class="photo"><img src="example.jpg" alt="Photo 1"></td>
-      <td>Ceci est une description longue qui sera tronquée s'il dépasse la largeur de la cellule.</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Titre 2</td>
-      <td>2023-11-02</td>
-      <td class="photo"><img src="example.jpg" alt="Photo 2"></td>
-      <td>Ceci est une autre description longue qui sera également tronquée.</td>
-    </tr>
-  </table>
 
+<h1>Ajouter un Champ de Saisie</h1>
+    <div id="champs">
+        <!-- Les champs seront ajoutés ici -->
+    </div>
+    <button id="ajouterChamp">Ajouter un Champ</button>
 
-<?php include "components/footer.php" ?>
+<?php include "components/footer-test.php" ?>

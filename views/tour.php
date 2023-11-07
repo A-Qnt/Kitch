@@ -18,10 +18,6 @@
             <div class="groupe">
                 <p>KITCH</p>
             </div>
-            <div class="horaire">
-                <p><span>20:00</span> to <span>23:00</span></p>
-                <p>Ouverture des portes à <span>19:00</span></p>
-            </div>
             <div class="lieu">
                 <p>Supersonic</p>
                 <p>Paris, FRANCE</p>

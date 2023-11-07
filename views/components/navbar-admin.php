@@ -9,6 +9,5 @@
     <a href="../controllers/controller-admin-article.php">ARTICLE</a>
     <a href="../controllers/controller-admin-date.php">DATE</a>
     <a href="../controllers/controller-admin-album.php">ALBUM</a>
-    <a href="../controllers/controller-admin-contact.php">CONTACT</a>
   </nav>
 </header>

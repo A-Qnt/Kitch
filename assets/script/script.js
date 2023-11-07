@@ -2,26 +2,35 @@
 
 
 
-// let maxchar = document.getElementById('maxchar');
-// let text = maxchar.textContent;
 
-// if (text.length > 15) {
-//     maxchar.textContent = text.slice(0, 15) + "...";
-// };
 
-// let maxchar2 = document.getElementById('maxchar2');
-// let text2 = maxchar2.textContent;
 
-// if (text2.length > 15) {
-//     maxchar2.textContent = text2.slice(0, 15) + "...";
-// };
+//Sccript pour ajouter ou supprimer des champs pour les pistes d'album
 
-// let maxchar3 = document.getElementById('maxchar3')
-// let text3 = maxchar3.textContent;
+document.addEventListener('DOMContentLoaded', function () {
+    const boutonAjouterChamp = document.getElementById('buttonAdd');
+    const boutonSupprimerChamp = document.getElementById('buttonDelete');
+    const champsContainer = document.getElementById('addChamp');
+    let champCounter = 0;
 
-// if (text3.length > 15) {
-//     maxchar3.textContent = text3.slice(0, 15) + "...";
-// };
+    boutonAjouterChamp.addEventListener('click', function () {
+        const nouveauChamp = document.createElement('input');
+        nouveauChamp.type = 'text';
+        nouveauChamp.name = 'Piste ' + champCounter;
+        nouveauChamp.placeholder = 'Piste ' + (champCounter + 1);
+        nouveauChamp.required = true;
+        champsContainer.appendChild(nouveauChamp);
+        champCounter++;
+    });
+
+    boutonSupprimerChamp.addEventListener("click", function () {
+        if (champCounter > 0) {
+            champCounter--;
+            const dernierChamp = champsContainer.lastChild;
+            champsContainer.removeChild(dernierChamp);
+        }
+    })
+});
 
 
 // fonction pour afficher les details des albums au clique
