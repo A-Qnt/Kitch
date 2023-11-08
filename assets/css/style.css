@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    list-style: none;
     font-size: 60px;
 }
 
@@ -522,6 +521,7 @@ header {
 }
 
 .album-title h4 {
+    text-align: start;
     font-size: 30px;
 }
 
@@ -568,11 +568,14 @@ header {
 }
 
 
-.mid-bandeau .tracks .tracks-left ul li,
-.mid-bandeau .tracks .tracks-right ul li {
+.mid-bandeau .tracks .tracks-left ol li,
+.mid-bandeau .tracks .tracks-right ol li {
     text-align: start;
     font-family: 'Open sans';
     font-size: 30px;
+}
+li {
+    color: white;
 }
 
 .right-bandeau {

@@ -34,24 +34,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // fonction pour afficher les details des albums au clique
+document.addEventListener("click", e => {
+    if (e.target.dataset.type == "album") {
+        detailsAlbum(e.target.dataset.album)
+    }
+})
 
-document.getElementById('henger').addEventListener("click", function () {
-    detailsAlbum("info1");
-});
-
-document.getElementById('calame').addEventListener("click", function () {
-    detailsAlbum("info2");
-});
-
-document.getElementById('nsl').addEventListener("click", function () {
-    detailsAlbum("info3");
-});
-
-function detailsAlbum(infoId) {
-    var info = document.getElementById(infoId);
+function detailsAlbum(album) {
+    var info = document.querySelector(`[data-details="${album}"]`);
     if (info.style.display === "none" || info.style.display === "") {
         info.style.display = "flex";
     } else {
         info.style.display = "none";
     }
 };
+

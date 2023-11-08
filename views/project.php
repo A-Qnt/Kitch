@@ -3,50 +3,59 @@
 
 <div class="album-container"><!--div qui contient les bandeaux-->
     <div class="albums">
-        <img src="../assets/img/photo-album/coverhenger.jpg" alt="Image News" id="henger">
-        <img src="../assets/img/photo-album/covercalame.jpeg" alt="Image News" id="calame">
-        <img src="../assets/img/photo-album/covernewstrifeland.jpg" alt="Image News" id="nsl">
+        <?php foreach (Album::getAlbum() as $album) { ?>
+            <img src="../assets/img/photo-album/<?= $album["album_cover"] ?>" alt="Image News" data-type="album" data-album="album-<?= $album["album_id"] ?>">
+
+
+
+
+
+
+
+
+
+        <?php } ?>
     </div>
-    <div id="info1" class="bandeau"> <!--div d'un bandeau complet-->
-        <div class="left-bandeau"> <!--div gauche qui contient l'image de l'album-->
-            <img src="../assets/img/photo-album/coverhenger.jpg" alt="Image News">
-        </div>
-        <div class="mid-bandeau"> <!--div droite qui contient le titre et les tracks de l'album-->
-            <div class="album-title"><!--div qui contient le titre-->
-                <h2>HENGER</h2>
-                <h3>15 Nov 2018</h3>
-                <h4>Titres:</h4>
+
+    <?php foreach (Album::getAlbum() as $album) { ?>
+        <div data-details="album-<?= $album["album_id"] ?>" class="bandeau"> <!--div d'un bandeau complet-->
+            <div class="left-bandeau"> <!--div gauche qui contient l'image de l'album-->
+                <img src="../assets/img/photo-album/<?= $album["album_cover"] ?>" alt="Image News">
             </div>
-            <div class="tracks"><!--div qui contient les tracks de gauche et de droite-->
-                <div class="tracks-left"> <!--div qui contient les tracks a gauche-->
-                    <ul>
-                        <li>Raggedman</li>
-                        <li>Oiseau</li>
-                        <li>Night Tripper</li>
-                        <li>Hell Leefan</li>
-                        <li>Fall</li>
-                        <li>Londres</li>
-                        <li>Forest</li>
-                    </ul>
+            <div class="mid-bandeau"> <!--div droite qui contient le titre et les tracks de l'album-->
+                <div class="album-title"><!--div qui contient le titre-->
+                    <h2><?= $album["album_title"] ?></h2>
+                    <h3><?= $album["release"] ?></h3>
+                    <h4>Titres:</h4>
                 </div>
-                <div class="tracks-right"><!--div qui contient les tracks a droite-->
-                    <ul>
-                        <li>Buffet</li>
-                        <li>Colors</li>
-                        <li>Juice</li>
-                        <li>Transport</li>
-                        <li>Updown</li>
-                        <li>Echanges</li>
-                        <li>Bettty Boop</li>
-                    </ul>
+                <div class="tracks"><!--div qui contient les tracks de gauche et de droite-->
+                    <div class="tracks-left"> <!--div qui contient les tracks a gauche-->
+                        <ol>
+                            <?php foreach (Album::getTracksByAlbum($album["album_id"]) as $track) { ?>
+                                <li><?= $track["track_title"] ?></li>
+                            <?php } ?>
+                        </ol>
+                    </div>
+                    <!-- <div class="tracks-right">div qui contient les tracks a droite -->
+                    <!-- <ul>
+                            <li>Buffet</li>
+                            <li>Colors</li>
+                            <li>Juice</li>
+                            <li>Transport</li>
+                            <li>Updown</li>
+                            <li>Echanges</li>
+                            <li>Bettty Boop</li>
+                        </ul>
+                    </div> -->
                 </div>
             </div>
+            <div class="right-bandeau">
+                <h3>En deux mots:</h3>
+                <p><?= $album["album_description"]  ?></p>
+            </div>
         </div>
-        <div class="right-bandeau">
-            <h3>En deux mots:</h3>
-            <p>C’est un album que l’on peut qualifier dans un premier temps de « dark ». Au-delà de la musique, c’est tout un univers sombre, on peut le voir à travers les couleurs de la pochette de l’album faite par Rémy Badout. On peut le qualifier aussi de très expérimental, car c’est une façon de composer propre à nous, on se cherchait encore. C’est un album de découverte, autant entre nous que pour les autres.</p>
-        </div>
-    </div>
+    <?php } ?>
+
     <div id="info2" class="bandeau"> <!--div d'un bandeau complet-->
         <div class="left-bandeau"> <!--div gauche qui contient l'image de l'album-->
             <img src="../assets/img/photo-album/covercalame.jpeg" alt="Image News">

@@ -44,7 +44,59 @@ class Album
             $pdo = Database::createInstancePDO();
 
             // je stock ma requête dans une variable
-            $sql = 'SELECT `album_title`, DATE_FORMAT(`album_release`, "%d/%m/%Y") AS "release", `album_description`, `album_cover`, `track_number`, `track_title` FROM `kitch_album` NATURAL JOIN `kitch_tracks` order by `track_number`';
+            $sql = 'SELECT `album_id`, `album_title`, DATE_FORMAT(`album_release`, "%d/%m/%Y") AS "release", `album_description`, `album_cover` FROM `kitch_album`';
+
+            // J'effectue la requete et je la stock dans une variable (statement)
+            $stmt = $pdo->query($sql);
+
+            // Pour récupérer les données, j'utilise la méthode fetchAll() car nous avons plusieurs résultats
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $result;
+        } catch (PDOException $e) {
+            // test unitaire pour connaitre la raison qui a empêché la récupération des animaux
+            // echo 'Erreur : ' . $e->getMessage();
+            return false;
+        }
+    }
+
+    /**
+     * Méthode permettant d'afficher tous les albums de la base de données
+     * @return array Tableau associatif contenant les infos des animaux
+     */
+    public static function getAlbumById(): array
+    {
+
+        try {
+            // création d'une instance PDO
+            $pdo = Database::createInstancePDO();
+
+            // je stock ma requête dans une variable
+            $sql = 'SELECT `album_title`, DATE_FORMAT(`album_release`, "%d/%m/%Y") AS "release", `album_description`, `album_cover` FROM `kitch_album` WHERE `album_id` = 1';
+
+            // J'effectue la requete et je la stock dans une variable (statement)
+            $stmt = $pdo->query($sql);
+
+            // Pour récupérer les données, j'utilise la méthode fetchAll() car nous avons plusieurs résultats
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $result;
+        } catch (PDOException $e) {
+            // test unitaire pour connaitre la raison qui a empêché la récupération des animaux
+            // echo 'Erreur : ' . $e->getMessage();
+            return false;
+        }
+    }
+
+
+    public static function getTracksByAlbum(int $album_id): array
+    {
+        try {
+            // création d'une instance PDO
+            $pdo = Database::createInstancePDO();
+
+            // je stock ma requête dans une variable
+            $sql = "SELECT * FROM `kitch_tracks` WHERE `album_id` = $album_id";
 
             // J'effectue la requete et je la stock dans une variable (statement)
             $stmt = $pdo->query($sql);

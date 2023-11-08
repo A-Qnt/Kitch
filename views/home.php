@@ -12,14 +12,14 @@
     <h2>Actualités</h2>
 </div>
 <div class="cards">
-    <a href="#">
-        <div class="card">
-            <img src="../assets/img/photo-band/KITCH 2 JON FAYARD.jpg" alt="Image News" class="card-image">
-            <h2 class="card-title">Nouvel album</h2>
-            <p class="card-description">Kitch viens de sortir son nouvel album New Strife Lands". Le meilleur de KITCH.</p>
-            <p class="card-date">20-10-2023</p>
-        </div>
-    </a>
+        <a href="#">
+            <div class="card">
+                <img src="../assets/img/photo-band/KITCH 2 JON FAYARD.jpg" alt="Image News" class="card-image">
+                <h2 class="card-title">Nouvel album</h2>
+                <p class="card-description">Kitch viens de sortir son nouvel album New Strife Lands". Le meilleur de KITCH.</p>
+                <p class="card-date">20-10-2023</p>
+            </div>
+        </a>
     <a href="#">
         <div class="card">
             <img src="../assets/img/photo-band/KITCH 2 JON FAYARD.jpg" alt="Image News" class="card-image">
