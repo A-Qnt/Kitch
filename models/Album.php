@@ -34,7 +34,7 @@ class Album
 
     /**
      * Méthode permettant d'afficher tous les albums de la base de données
-     * @return array Tableau associatif contenant les infos des animaux
+     * @return array Tableau associatif contenant les cover des albums
      */
     public static function getAlbum(): array
     {

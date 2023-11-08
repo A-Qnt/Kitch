@@ -5,15 +5,6 @@
     <div class="albums">
         <?php foreach (Album::getAlbum() as $album) { ?>
             <img src="../assets/img/photo-album/<?= $album["album_cover"] ?>" alt="Image News" data-type="album" data-album="album-<?= $album["album_id"] ?>">
-
-
-
-
-
-
-
-
-
         <?php } ?>
     </div>
 

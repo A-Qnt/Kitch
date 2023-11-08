@@ -392,7 +392,8 @@ header {
     background-color: white;
     width: 800px;
     height: 300px;
-    border-radius: 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .leftSide {
@@ -403,17 +404,8 @@ header {
 .leftSide img {
     width: 300px;
     height: 300px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-
-.leftSide p {
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    position: absolute;
-    font-size: 25px;
-    font-weight: 700;
-    color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .rightSide {
@@ -427,16 +419,19 @@ header {
 
 .rightSide .date {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     border-bottom: solid 2px black;
     border-top: solid 2px black;
+    align-items: center;
 }
 
 .rightSide .date p {
-    font-family: 'lack';
+    font-family: 'open sans';
     font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
+    margin: auto;
+    
 }
 
 .rightSide .date p span {
@@ -451,8 +446,17 @@ header {
     font-family: 'Franklin Gothic Heavy';
     font-size: 45px;
     font-weight: 700;
-    color: #2f91e0;
-    margin: 10px 0;
+    color: #161616;
+    
+}
+
+.rightSide .groupe span {
+    text-align: center;
+    font-family: 'open sans';
+    font-size: 30px;
+    font-weight: 700;
+    color: #2a2a2b;
+    
 }
 
 .rightSide .horaire p {
@@ -530,7 +534,7 @@ header {
     display: none;
     justify-content: start;
     background-color: #000000;
-    height: 500px;
+    height: auto;
     width: 95%;
     border-radius: 20px;
     padding: 20px;
@@ -540,7 +544,7 @@ header {
 
 
 .left-bandeau img {
-    height: 100%;
+    height: 400px;
 }
 
 .left-bandeau {
