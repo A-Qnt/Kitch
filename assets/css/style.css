@@ -161,11 +161,12 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 380px;
     /* Largeur fixe de la carte */
-    max-height: 600px;
+    max-height: 400px;
     /* Hateur maximum de la carte */
     padding: 20px;
-    text-align: center;
+    text-align: justify;
     margin: 10px;
+    overflow-y: scroll;
 
 }
 
@@ -177,11 +178,12 @@ header {
     /* Hauteur maximale de l'image */
     object-fit: cover;
     /* Redimensionner l'image pour remplir la boîte tout en conservant son ratio */
+    position: sticky;
 }
 
 /* Style du titre */
 .card-title {
-    font-size: 0.8rem;
+    font-size: 30px;
     margin-top: 10px;
     /* Espacement de 10px entre l'image et le titre */
     margin-bottom: 0;
