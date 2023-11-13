@@ -4,30 +4,35 @@
     <button>Ajouter une date de concert</button>
 </div>
 <div class="addArticleDate">
-<form action="traitement.php" method="post" enctype="multipart/form-data">
+    <form action="" method="POST" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="titre">Photo :</label>
-            <input type="text" id="titre" name="titre" required>
+            <label for="picture">Photo :</label>
+            <input type="file" id="picture" name="picture">
+            <span class="error"><?php if (isset($errors['picture'])) echo $errors['picture']; ?></span>
         </div>
 
         <div class="form-group">
-            <label for="date">Date :</label>
-            <input type="date" id="date" name="date" required>
+            <label for="dateTour">Date :</label>
+            <input type="date" id="dateTour" name="dateTour">
+            <span class="error"><?php if (isset($errors['dateTour'])) echo $errors['dateTour']; ?></span>
         </div>
 
         <div class="form-group">
-            <label for="salle">salle :</label>
-            <input type="text" id="salle" name="salle" required>
+            <label for="country">Pays :</label>
+            <input type="text" id="country" name="country">
+            <span class="error"><?php if (isset($errors['country'])) echo $errors['country']; ?></span>
         </div>
 
         <div class="form-group">
-            <label for="ville">Ville :</label>
-            <input type="text" id="ville" name="ville" required>
+            <label for="city">Ville :</label>
+            <input type="text" id="city" name="city">
+            <span class="error"><?php if (isset($errors['city'])) echo $errors['city']; ?></span>
         </div>
 
         <div class="form-group">
-            <label for="description">Description :</label>
-            <textarea id="description" name="description" required></textarea>
+            <label for="room">Salle :</label>
+            <input type="text" id="room" name="room">
+            <span class="error"><?php if (isset($errors['room'])) echo $errors['room']; ?></span>
         </div>
 
         <div class="form-group">
@@ -36,25 +41,30 @@
     </form>
 </div>
 <div class="tableau">
+
+
+
     <table>
         <tr>
             <th>ID</th>
             <th>PHOTO</th>
             <th>DATE</th>
             <th>SALLE</th>
-            <th>VILLE</th>
+            <th>LIEU</th>
             <th></th>
             <th></th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>band-photo.jpg</td>
-            <td>20-10-2023</td>
-            <td>Supersonic</td>
-            <td>Paris, France</td>
-            <td><button class="modify-button">Modifier</button></td>
-            <td><button class="delete-button">Supprimer</button></td>
-        </tr>
+        <?php foreach (Tour::getTour() as $tour) { ?>
+            <tr>
+                <td><?= $tour['tour_id'] ?></td>
+                <td><?= $tour["tour_picture"] ?></td>
+                <td><?= $tour["date"] ?></td>
+                <td><?= $tour["tour_room"] ?></td>
+                <td><?= $tour["tour_city"] ?>, <?= $tour["tour_country"] ?></td>
+                <td><button class="modify-button">Modifier</button></td>
+                <td><button class="delete-button">Supprimer</button></td>
+            </tr>
+        <?php } ?>
         <tr>
             <td>2</td>
             <td>band-photo.jpg</td>
@@ -78,7 +88,7 @@
             <span>20-10-2023</span>
         </div>
         <div class="titlesCard">
-        <p>Image :</p>
+            <p>Image :</p>
             <span>band-photo.jpeg</span>
         </div>
         <div class="titlesCard">
@@ -105,7 +115,7 @@
             <span>20-10-2023</span>
         </div>
         <div class="titlesCard">
-        <p>Image :</p>
+            <p>Image :</p>
             <span>band-photo.jpeg</span>
         </div>
         <div class="titlesCard">

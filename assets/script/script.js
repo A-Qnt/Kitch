@@ -49,6 +49,6 @@ function detailsAlbum(album) {
     }
 };
 
-//fonction pour afficher les tracks sur deux colonnes quand il y a plus de 7 morceaux
+
 
 

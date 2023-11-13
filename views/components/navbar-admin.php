@@ -7,7 +7,7 @@
   <!-- Navbar -->
   <nav class="navbar">
     <a href="../controllers/controller-admin-article.php">ARTICLE</a>
-    <a href="../controllers/controller-admin-date.php">DATE</a>
+    <a href="../controllers/controller-admin-tour.php">TOUR</a>
     <a href="../controllers/controller-admin-album.php">ALBUM</a>
   </nav>
 </header>

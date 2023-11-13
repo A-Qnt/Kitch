@@ -181,6 +181,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1); /* Inverser les couleurs pour rendre l'icône blanche */
 }
 
+.error {
+    color: red;
+    font-size: 20px;
+    margin-top: 10px;
+}
 
 
 
