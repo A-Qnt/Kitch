@@ -1,10 +1,10 @@
 <?php include "components/head.php" ?>
 <?php include "components/navbar-admin.php" ?>
 <div class="addComposantbutton">
-    <button>Ajouter un album</button>
+    <button id="addAlbumButton">Ajouter un album</button>
 </div>
-<div class="addArticleAlbum">
-    <form action="traitement.php" method="post" enctype="multipart/form-data">
+<div class="addArticleAlbum" id="formAlbum">
+    <form action="" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="titleAlbum">Titre :</label>
             <input type="text" id="titleAlbum" name="titleAlbum" required>

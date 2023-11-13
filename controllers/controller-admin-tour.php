@@ -63,20 +63,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }   
     } 
 
-    // si le tableau d'erreur est vide, nous pouvons procéder à l'insertion des données dans la base de données
+    // si le tableau d'erreurs est vide, on ajoute la date de concert
     if (empty($errors)) {
-       
-        // Nous allons convertir le fichier en base64 pour le stocker dans la base de données
-        // nous récupérons le contenu du fichier
-        $picture = file_get_contents($_FILES['picture']['tmp_name']);
-
-        // nous convertissons le contenu du fichier en base64
-        $pictureIn64 = base64_encode($picture);
-
+        // nous récupérons le contenu du fichier image
+        $pictureIn64 = file_get_contents($_FILES['picture']['tmp_name']);
+        // nous encodons le contenu du fichier image en base64
+        $pictureIn64 = base64_encode($pictureIn64);
+        // nous ajoutons la date de concert
         if (Tour::addTour($_POST, $pictureIn64)) {
-            $success = 'Le concert a bien été ajouté';
+            header('Location: controller-admin-tour.php');
         } else {
-            $errors['bdd'] = 'Une erreur est survenue lors de l\'ajout du concert';
+            $errors['bdd'] = 'Erreur lors de l\'ajout de la date de concert';
         }
     }
     

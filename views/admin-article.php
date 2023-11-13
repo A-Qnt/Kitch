@@ -1,9 +1,9 @@
 <?php include "components/head.php" ?>
 <?php include "components/navbar-admin.php" ?>
 <div class="addComposantbutton">
-    <button>Ajouter un article</button>
+    <button id="addArticleButton">Ajouter un article</button>
 </div>
-<div class="addArticleForm">
+<div class="addArticleForm" id="formArticle">
     <form action="traitement.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="titre">Titre :</label>

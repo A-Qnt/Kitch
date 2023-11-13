@@ -53,8 +53,6 @@ private string $tour_picture;
 
             // On prépare la requête avant de l'exécuter
             $stmt = $pdo->prepare($sql);
-            var_dump($inputs);
-            var_dump($pictureIn64);
 
             // On injecte les valeurs dans la requête et nous utilisons la méthode bindValue pour se prémunir des injections SQL
             $stmt->bindValue(':dateTour', Form::safeData($inputs['dateTour']), PDO::PARAM_STR);
@@ -67,7 +65,7 @@ private string $tour_picture;
             return $stmt->execute();
         } catch (PDOException $e) {
             // test unitaire pour vérifier que l'animal n'a pas été ajouté et connaitre la raison
-             echo 'Erreur : ' . $e->getMessage();
+             //echo 'Erreur : ' . $e->getMessage();
             return false;
         }
     }
