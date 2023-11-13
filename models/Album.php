@@ -16,18 +16,34 @@ class Album
      * @return bool Retourne true si l'animal a bien été ajouté, false si KO
      */
 
-    //  public function addAlbum (array $inputs): bool 
-    //  {
-    // try {
-    //Creation d'une instance de connexion à la base de données
-    // $pdo = Database::createInstancePDO();
-
-    // requete SQL pour ajouter un album en utilisant des marqueurs nominatifs
-    // $sql = ''
-    // } catch (\Throwable $th) {
-    //throw $th;
-    // }
-    //  }
+     public static function addAlbum (array $inputs): bool
+     {
+         try {
+             // Creation d'une instance de connexion à la base de données
+             $pdo = Database::createInstancePDO();
+ 
+             // requête SQL pour ajouter un animal avec des marqueurs nominatifs
+             $sql = 'INSERT INTO `kitch_album` (`album_title`, `album_release`, `album_description`, `album_cover`) VALUES (`:titleAlbum`, `:releaseAlbum`, `:descriptionAlbum`, `:coverAlbum`)';
+ 
+             // On prépare la requête avant de l'exécuter
+             $stmt = $pdo->prepare($sql);
+ 
+             // On injecte les valeurs dans la requête et nous utilisons la méthode bindValue pour se prémunir des injections SQL
+             $stmt->bindValue(':dateTour', Form::safeData($inputs['dateTour']), PDO::PARAM_STR);
+             $stmt->bindValue(':country', Form::safeData($inputs['country']), PDO::PARAM_STR);
+             $stmt->bindValue(':city', Form::safeData($inputs['city']), PDO::PARAM_STR);
+             $stmt->bindValue(':room', Form::safeData($inputs['room']), PDO::PARAM_STR);
+             $stmt->bindValue(':picture', $pictureIn64, PDO::PARAM_STR);
+             
+             // On exécute la requête, elle sera true si elle a réussi, dans le cas contraire il y aura une exception
+             return $stmt->execute();
+         } catch (PDOException $e) {
+             // test unitaire pour vérifier que l'animal n'a pas été ajouté et connaitre la raison
+             // echo 'Erreur : ' . $e->getMessage();
+             return false;
+         }
+     }
+ 
 
 
 

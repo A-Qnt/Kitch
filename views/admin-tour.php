@@ -3,6 +3,9 @@
 <div class="addComposantbutton">
     <button>Ajouter une date de concert</button>
 </div>
+<div class="form-error"><?= $errors['bdd'] ?? '' ?></div>
+<div class="form-error"><?= $success ?? '' ?></div>
+
 <div class="addArticleDate">
     <form action="" method="POST" enctype="multipart/form-data">
         <div class="form-group">
@@ -132,5 +135,6 @@
         </div>
     </div>
 </div>
+
 
 <?php include "components/footer.php" ?>

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     boutonAjouterChamp.addEventListener('click', function () {
         const nouveauChamp = document.createElement('input');
         nouveauChamp.type = 'text';
-        nouveauChamp.name = 'Piste ' + champCounter;
+        nouveauChamp.name = 'track' + champCounter;
         nouveauChamp.placeholder = 'Piste ' + (champCounter + 1);
         nouveauChamp.required = true;
         champsContainer.appendChild(nouveauChamp);

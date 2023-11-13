@@ -8,8 +8,6 @@ require_once "../models/Tour.php";
 
 //Nous definissons un tableau d'erreur
 $errors = [];
-// nous definissons une variable permettant de cache / afficher le formulaire
-$showForm = true;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // controle de la date : si vide
@@ -63,8 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errors['picture'] = 'Le fichier ne doit pas dépasser ' . UPLOAD_MAX_SIZE / 1000 . 'Ko';
         }
     }   
-    }
-          
+    } 
 
     // si le tableau d'erreur est vide, nous pouvons procéder à l'insertion des données dans la base de données
     if (empty($errors)) {
@@ -77,13 +74,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $pictureIn64 = base64_encode($picture);
 
         if (Tour::addTour($_POST, $pictureIn64)) {
-            $showForm = false;
             $success = 'Le concert a bien été ajouté';
         } else {
             $errors['bdd'] = 'Une erreur est survenue lors de l\'ajout du concert';
         }
     }
-
+    
 
 }
 

@@ -188,7 +188,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
-
+.form-error {
+    min-height: 1rem;
+    color: rgb(180, 100, 100);
+    font-size: 0.9rem;
+    font-style: italic;
+}
 
 
 

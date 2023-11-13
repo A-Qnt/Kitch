@@ -6,18 +6,18 @@
 <div class="addArticleAlbum">
     <form action="traitement.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="titre">Titre :</label>
-            <input type="text" id="titre" name="titre" required>
+            <label for="titleAlbum">Titre :</label>
+            <input type="text" id="titleAlbum" name="titleAlbum" required>
         </div>
 
         <div class="form-group">
-            <label for="image">Photo :</label>
-            <input type="file" id="image" name="image" accept="image/*" required>
+            <label for="coverAlbum">Photo :</label>
+            <input type="file" id="coverAlbum" name="coverAlbum" accept="image/*" required>
         </div>
 
         <div class="form-group">
-            <label for="date">Date :</label>
-            <input type="date" id="date" name="date" required>
+            <label for="releaseAlbum">Date :</label>
+            <input type="date" id="releaseAlbum" name="releaseAlbum" required>
         </div>
 
         <div class="form-group">
@@ -29,8 +29,8 @@
         </div>
 
         <div class="form-group">
-            <label for="description">Description :</label>
-            <textarea id="description" name="description" required></textarea>
+            <label for="descriptionAlbum">Description :</label>
+            <textarea id="descriptionAlbum" name="descriptionAlbum" required></textarea>
         </div>
 
         <div class="form-group">
