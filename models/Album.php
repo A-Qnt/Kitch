@@ -16,7 +16,7 @@ class Album
      * @return bool Retourne true si l'animal a bien été ajouté, false si KO
      */
 
-     public static function addAlbum (array $inputs, string $pictureIn64): bool
+     public static function addAlbum (array $inputs, string $pictureIn64): int
      {
          try {
              // Creation d'une instance de connexion à la base de données
@@ -34,16 +34,41 @@ class Album
              $stmt->bindValue(':descriptionAlbum', Form::safeData($inputs['descriptionAlbum']), PDO::PARAM_STR);
              $stmt->bindValue(':coverAlbum', $pictureIn64, PDO::PARAM_STR);
              
-             // On exécute la requête, elle sera true si elle a réussi, dans le cas contraire il y aura une exception
-             return $stmt->execute();
+             // On exécute la requête, 
+             $stmt->execute();
+             return $pdo->lastInsertId();
          } catch (PDOException $e) {
              // test unitaire pour vérifier que l'animal n'a pas été ajouté et connaitre la raison
             //  echo 'Erreur : ' . $e->getMessage();
-             return false;
+             return 0;
          }
      }
  
-
+     public static function addTrack($track,$album_id): bool
+     {
+            try {
+                // Creation d'une instance de connexion à la base de données
+                $pdo = Database::createInstancePDO();
+    
+                // requête SQL pour ajouter un animal avec des marqueurs nominatifs
+                $sql = 'INSERT INTO `kitch_tracks` (`track_title`, `album_id`) VALUES (:track, :album_id)';
+    
+                // On prépare la requête avant de l'exécuter
+                $stmt = $pdo->prepare($sql);
+    
+                // On injecte les valeurs dans la requête et nous utilisons la méthode bindValue pour se prémunir des injections SQL
+                $stmt->bindValue(':track', Form::safeData($track), PDO::PARAM_STR);
+                $stmt->bindValue(':album_id', $album_id, PDO::PARAM_INT);
+    
+                // On exécute la requête, 
+                $stmt->execute();
+                return true;
+            } catch (PDOException $e) {
+                // test unitaire pour vérifier que l'animal n'a pas été ajouté et connaitre la raison
+                //  echo 'Erreur : ' . $e->getMessage();
+                return false;
+            }
+     }
 
 
 

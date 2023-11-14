@@ -1,8 +1,5 @@
 <?php include "components/head.php" ?>
 <?php include "components/navbar-admin.php" ?>
-<div class="addComposantbutton">
-    <button id="addAlbumButton">Ajouter un album</button>
-</div>
 <div class="addArticleAlbum" id="formAlbum">
     <form action="" method="POST" enctype="multipart/form-data">
         <div class="form-group">
@@ -28,6 +25,7 @@
                 <label for="track">Pistes :</label>
                 <button id="buttonAdd" type="button">+</button>
                 <button id="buttonDelete" type="button">-</button>
+                <span class="error"><?php if (isset($errors['tracks'] )) echo $errors['tracks']  ?></span>
             </div>
         </div>
 
@@ -40,8 +38,10 @@
         <div class="form-group">
             <button type="submit" class="btn">Ajouter</button>
         </div>
+        <span class="error"><?php if (isset($errors['addTheAlbum'] )) echo $errors['addTheAlbum']  ?></span>
+        <span class="error"><?php if (isset($uploadMessage )) echo $uploadMessage  ?></span>
+       
     </form>
-    <?php if (isset($errors['addAlbum'])) echo $uploadMessage ?>
 </div>
 <div class="tableau">
     <table>

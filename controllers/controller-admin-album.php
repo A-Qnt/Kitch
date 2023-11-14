@@ -6,7 +6,7 @@ require_once "../models/Album.php";
 
 //Nous definissons un tableau d'erreur
 $errors = [];
-var_dump(count($_POST)-3);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //controle du titre : si vide
     if (isset($_POST['titleAlbum'])) {
@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     //controle des tracks : si vide 
-    if (count($_POST) == 0) {
-        $errors['trackAlbum'] = 'Ajout d\'une piste minimum obligatoire';
+    if (count($_POST) == 3 ) {
+        $errors['tracks'] = 'Ajout d\'une piste minimum obligatoire';
     }
 
     // controle de la photo : si vide
@@ -68,20 +68,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $new_name = uniqid() . '.webp';
 
         if (move_uploaded_file($_FILES["coverAlbum"]["tmp_name"], $directory . $new_name)) {
-            // nous ajoutons l'album
-            if (Album::addAlbum($_POST, $new_name)) {
+            // nous ajoutons l'album et nous récupérons son id pour l'ajouter aux tracks
+            $album_id = Album::addAlbum($_POST, $new_name);
+
+            if ($album_id > 0) {
+
+                foreach ($_POST as $key => $value) {
+                    if (preg_match('#track#', $key)) {
+                        $track = $value;
+                        Album::addTrack($track, $album_id);
+                    }
+                }
+
+                
+
+
                 // nous redirigeons vers la page d'accueil
                 header('Location: controller-admin-album.php');
             } else {
-                $errors['addAlbum'] = 'Erreur lors de l\'ajout de l\'album';
+                $errors['addTheAlbum'] = 'Erreur lors de l\'ajout de l\'album';
             }
-
-
-            $uploadMessage = '<span class="h4 text-success">le fichier a bien été uploadé</span>';
         } else {
-            $uploadMessage = '<span class="h6 text-danger">Erreur lors de l\'upload de votre fichier</span>';
-            $uploadOk = false;
+            $uploadMessage = 'Erreur lors de l\'upload de votre fichier';
         }
+        var_dump($uploadMessage);
     }
 }
 
