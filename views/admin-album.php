@@ -7,17 +7,20 @@
     <form action="" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="titleAlbum">Titre :</label>
-            <input type="text" id="titleAlbum" name="titleAlbum" required>
+            <input type="text" id="titleAlbum" name="titleAlbum">
+            <span class="error"><?php if (isset($errors['titleAlbum'])) echo $errors['titleAlbum'] ?></span>
         </div>
 
         <div class="form-group">
             <label for="coverAlbum">Photo :</label>
-            <input type="file" id="coverAlbum" name="coverAlbum" accept="image/*" required>
+            <input type="file" id="coverAlbum" name="coverAlbum" accept="image/*">
+            <span class="error"><?php if (isset($errors['coverAlbum'])) echo $errors['coverAlbum'] ?></span>
         </div>
 
         <div class="form-group">
             <label for="releaseAlbum">Date :</label>
-            <input type="date" id="releaseAlbum" name="releaseAlbum" required>
+            <input type="date" id="releaseAlbum" name="releaseAlbum">
+            <span class="error"><?php if (isset($errors['releaseAlbum'])) echo $errors['releaseAlbum'] ?></span>
         </div>
 
         <div class="form-group">
@@ -30,13 +33,15 @@
 
         <div class="form-group">
             <label for="descriptionAlbum">Description :</label>
-            <textarea id="descriptionAlbum" name="descriptionAlbum" required></textarea>
+            <textarea id="descriptionAlbum" name="descriptionAlbum"></textarea>
+            <span class="error"><?php if (isset($errors['descriptionAlbum'])) echo $errors['descriptionAlbum'] ?></span>
         </div>
 
         <div class="form-group">
             <button type="submit" class="btn">Ajouter</button>
         </div>
     </form>
+    <?php if (isset($errors['addAlbum'])) echo $uploadMessage ?>
 </div>
 <div class="tableau">
     <table>
@@ -50,45 +55,37 @@
             <th></th>
             <th></th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>20-10-2023</td>
-            <td>band-photo.jpg</td>
-            <td>Supersonic</td>
-            <td>
-                <ol class="cols">
-                    <div class="col1">
-                        <li>azerty</li>
-                        <li>azerty</li>
-                        <li>azerty</li>
-                        <li>azerty</li>
-                        <li>azerty</li>
-                        <li>azerty</li>
-                    </div>
-                    <div class="col2">
-                        <li>azerty</li>
-                        <li>azerty</li>
-                        <li>azerty</li>
-                        <li>azerty</li>
-                        <li>azerty</li>
-                        <li>azerty</li>
-                    </div>
-                </ol>
-            </td>
-            <td>Dans “Calame”, leur nouvel album, Kitch nous propose un voyage dans un monde alternatif qui s’étire du post-rock au trip-hop. Sans vraiment passer par la musique pop.</td>
-            <td><button class="modify-button">Modifier</button></td>
-            <td><button class="delete-button">Supprimer</button></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>20-10-2023</td>
-            <td>band-photo.jpg</td>
-            <td>Supersonic</td>
-            <td>Paris, France</td>
-            <td><button class="modify-button">Modifier</button></td>
-            <td><button class="delete-button">Supprimer</button></td>
-        </tr>
-        <!-- Ajoutez d'autres lignes de données ici -->
+        <?php foreach (Album::getAlbum() as $album) { ?>
+            <tr>
+                <td><?= $album['album_id'] ?></td>
+                <td><?= $album['album_title'] ?></td>
+                <td><img src="../assets/img/photo-bdd/album/<?= $album['album_cover'] ?>"></td>
+                <td><?= $album['release'] ?></td>
+                <td>
+                    <ol class=" cols">
+                        <div class="col1">
+                            <li>azerty</li>
+                            <li>azerty</li>
+                            <li>azerty</li>
+                            <li>azerty</li>
+                            <li>azerty</li>
+                            <li>azerty</li>
+                        </div>
+                        <div class="col2">
+                            <li>azerty</li>
+                            <li>azerty</li>
+                            <li>azerty</li>
+                            <li>azerty</li>
+                            <li>azerty</li>
+                            <li>azerty</li>
+                        </div>
+                    </ol>
+                </td>
+                <td><?= $album['album_description'] ?></td>
+                <td><button class="modify-button">Modifier</button></td>
+                <td><button class="delete-button">Supprimer</button></td>
+            </tr>
+        <?php } ?>
     </table>
 </div>
 

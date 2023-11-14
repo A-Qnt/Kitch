@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         nouveauChamp.type = 'text';
         nouveauChamp.name = 'track' + champCounter;
         nouveauChamp.placeholder = 'Piste ' + (champCounter + 1);
-        nouveauChamp.required = true;
+        nouveauChamp.required = false;
         champsContainer.appendChild(nouveauChamp);
         champCounter++;
     });
@@ -50,5 +50,32 @@ function detailsAlbum(album) {
 };
 
 
+//garder les données quand le formaulire n'est pas complet 
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Restaure les valeurs des champs du formulaire depuis le stockage local lors du chargement de la page
+    document.getElementById('titleArticle').value = localStorage.getItem('titleArticle') || '';
+    document.getElementById('dateArticle').value = localStorage.getItem('dateArticle') || '';
+    document.getElementById('contentArticle').value = localStorage.getItem('contentArticle') || '';
+    document.getElementById('linkArticle').value = localStorage.getItem('linkArticle') || '';
+});
+
+// Enregistre les valeurs des champs dans le stockage local lors de la saisie
+document.getElementById('formArticle').addEventListener('input', function (event) {
+    localStorage.setItem(event.target.name, event.target.value);
+});
 
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Restaure les valeurs des champs du formulaire depuis le stockage local lors du chargement de la page
+    document.getElementById('titleArticle').value = localStorage.getItem('titleArticle') || '';
+    document.getElementById('dateArticle').value = localStorage.getItem('dateArticle') || '';
+    document.getElementById('contentArticle').value = localStorage.getItem('contentArticle') || '';
+    document.getElementById('linkArticle').value = localStorage.getItem('linkArticle') || '';
+});
+
+// Enregistre les valeurs des champs dans le stockage local lors de la saisie
+document.getElementById('formArticle').addEventListener('input', function (event) {
+    localStorage.setItem(event.target.name, event.target.value);
+});

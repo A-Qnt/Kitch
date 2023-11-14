@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $errors['pictureArticle'] = 'L\'image doit être de type jpg, jpeg, png, gif ou webp';
                 // nous vérifions que la taille du fichier ne dépasse pas la taille maximale autorisée
             } elseif ($_FILES['pictureArticle']['size'] > UPLOAD_MAX_SIZE) {
-                $errors['pictureArticle'] = 'L\'image ne doit pas dépasser  ' . UPLOAD_MAX_SIZE / 1000 . 'Ko';
+                $errors['pictureArticle'] = 'Le fichier est trop volumineux';
             }
         }
     }
@@ -58,9 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // si le tableau d'erreur est vide, nous pouvons ajouter l'article
     if (empty($errors)) {
         // nous récupérons le contenu du fichier image
-        $pictureIn64 = file_get_contents($_FILES['pictureArticle']['tmp_name']);
+        $picture = file_get_contents($_FILES['pictureArticle']['tmp_name']);
         // nous encodons le contenu du fichier image en base64
-        $pictureIn64 = base64_encode($pictureIn64);
+        $pictureIn64 = base64_encode($picture);
         // nous ajoutons la date de l'article
         if (News::addNews($_POST, $pictureIn64)) {
             header('Location: controller-admin-article.php');

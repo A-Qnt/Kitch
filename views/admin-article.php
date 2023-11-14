@@ -92,31 +92,5 @@
         </div>
     </div>
 </div>
-<div class="tableSmartphone">
-    <div class="id">
-        <p>ID: 2</p>
-    </div>
-    <div class="mainCard">
-        <div class="titlesCard">
-            <p>Titre :</p>
-            <span>Concert a Lyon</span>
-        </div>
-        <div class="titlesCard">
-            <p>Date :</p>
-            <span>12-09-2023</span>
-        </div>
-        <div class="titlesCard">
-            <p>Image :</p>
-            <span>photo-concert.jpg</span>
-        </div>
-        <div class="titlesCard containerChar">
-            <p>Description :</p>
-            <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque obcaecati illum quia ipsa aut. Hic, vero nesciunt a nostrum nam facere omnis dolorum? Quo dolorem, reiciendis modi magni amet harum.</span>
-        </div>
-        <div class="buttons">
-            <button class="modify-button">Modifier</button>
-            <button class="delete-button">Supprimer</button>
-        </div>
-    </div>
 </div>
 <?php include "components/footer.php" ?>

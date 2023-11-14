@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $errors['picture'] = 'L\'image doit être de type jpg, jpeg, png, gif ou webp';
                 // nous vérifions que la taille du fichier ne dépasse pas la taille maximale autorisée
             } elseif ($_FILES['picture']['size'] > UPLOAD_MAX_SIZE) {
-                $errors['picture'] = 'Le fichier ne doit pas dépasser ' . UPLOAD_MAX_SIZE / 1000 . 'Ko';
+                $errors['picture'] = 'Le fichier est trop volumineux';
             }
         }
     }

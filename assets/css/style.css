@@ -174,7 +174,7 @@ header {
 .card-image {
     width: 100%;
     /* Taille de l'image fixe à 100% de la largeur de la carte */
-    max-height: 200px;
+    height: auto;
     /* Hauteur maximale de l'image */
     /* object-fit: cover; */
     /* Redimensionner l'image pour remplir la boîte tout en conservant son ratio */
@@ -392,7 +392,7 @@ header {
     margin-bottom: 30px;
     display: flex;
     background-color: white;
-    width: 800px;
+    width: 700px;
     height: 300px;
     border-radius: 5px;
     cursor: pointer;
@@ -531,7 +531,14 @@ header {
     font-size: 30px;
 }
 
-
+.admin h3 {
+    font-size: 30px;
+    font-family: 'Open sans';
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+    margin: 20px;
+}
 .bandeau {
     display: none;
     justify-content: start;
@@ -546,7 +553,8 @@ header {
 
 
 .left-bandeau img {
-    height: 400px;
+    max-height: 400px;
+    max-width: 400px;
 }
 
 .left-bandeau {
