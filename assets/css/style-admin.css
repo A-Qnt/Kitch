@@ -51,10 +51,6 @@ td {
     
 }
 
-.testtest {
-    max-height: 20px !important;
-}
-
 .cols {
     display: flex;
     width: 300px;

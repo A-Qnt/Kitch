@@ -19,7 +19,6 @@
     </div>
 </footer>
 
-<script src="path/to/lightbox.js"></script>
 <script src="../assets/script/script.js"></script>
 </body>
 

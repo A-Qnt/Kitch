@@ -176,9 +176,9 @@ header {
     /* Taille de l'image fixe à 100% de la largeur de la carte */
     max-height: 200px;
     /* Hauteur maximale de l'image */
-    object-fit: cover;
+    /* object-fit: cover; */
     /* Redimensionner l'image pour remplir la boîte tout en conservant son ratio */
-    position: sticky;
+  
 }
 
 /* Style du titre */

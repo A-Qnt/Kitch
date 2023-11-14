@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once "../config.php";
 require_once "../helpers/Database.php";
@@ -40,28 +40,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //controle de la photo : si vide
     if (isset($_FILES['picture'])) {
-       // si le code d'erreur est égal à 4, cela signifie que l'utilisateur n'a pas téléchargé de fichier
-         if ($_FILES['picture']['error'] == 4) {
-          $errors['picture'] = 'Photo obligatoire';
-    } else {
-        // nous récupérons le type du fichier avec son type mime et son extension : ex. image/png
-        $mimeUserFile = mime_content_type($_FILES["picture"]["tmp_name"]);
+        // si le code d'erreur est égal à 4, cela signifie que l'utilisateur n'a pas téléchargé de fichier
+        if ($_FILES['picture']['error'] == 4) {
+            $errors['picture'] = 'Photo obligatoire';
+        } else {
+            // nous récupérons le type du fichier avec son type mime et son extension : ex. image/png
+            $mimeUserFile = mime_content_type($_FILES["picture"]["tmp_name"]);
 
-        // nous utilisons la fonction explode() pour séparer le type mime et l'extension
-        $type = explode('/', $mimeUserFile)[0];
-        $extension = explode('/', $mimeUserFile)[1];
-        //nous vérifions que le fichier est bien une image
-        if ($type != 'image') {
-            $errors['picture'] = 'Le fichier doit être une image';
-            // nous vérifions que l'extension est bien une extension autorisée
-        } elseif (!in_array($extension, UPLOAD_EXTENSIONS)) {
-            $errors['picture'] = 'L\'image doit être de type jpg, jpeg, png, gif ou webp';
-            // nous vérifions que la taille du fichier ne dépasse pas la taille maximale autorisée
-        } elseif ($_FILES['picture']['size'] > UPLOAD_MAX_SIZE) {
-            $errors['picture'] = 'Le fichier ne doit pas dépasser ' . UPLOAD_MAX_SIZE / 1000 . 'Ko';
+            // nous utilisons la fonction explode() pour séparer le type mime et l'extension
+            $type = explode('/', $mimeUserFile)[0];
+            $extension = explode('/', $mimeUserFile)[1];
+            //nous vérifions que le fichier est bien une image
+            if ($type != 'image') {
+                $errors['picture'] = 'Le fichier doit être une image';
+                // nous vérifions que l'extension est bien une extension autorisée
+            } elseif (!in_array($extension, UPLOAD_EXTENSIONS)) {
+                $errors['picture'] = 'L\'image doit être de type jpg, jpeg, png, gif ou webp';
+                // nous vérifions que la taille du fichier ne dépasse pas la taille maximale autorisée
+            } elseif ($_FILES['picture']['size'] > UPLOAD_MAX_SIZE) {
+                $errors['picture'] = 'Le fichier ne doit pas dépasser ' . UPLOAD_MAX_SIZE / 1000 . 'Ko';
+            }
         }
-    }   
-    } 
+    }
 
     // si le tableau d'erreurs est vide, on ajoute la date de concert
     if (empty($errors)) {
@@ -76,8 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errors['bdd'] = 'Erreur lors de l\'ajout de la date de concert';
         }
     }
-    
-
 }
 
 include "../views/admin-tour.php";

@@ -3,26 +3,36 @@
 <div class="addComposantbutton">
     <button id="addArticleButton">Ajouter un article</button>
 </div>
+<div class="form-error"><?= $errors['bdd'] ?? '' ?></div>
 <div class="addArticleForm" id="formArticle">
-    <form action="traitement.php" method="post" enctype="multipart/form-data">
+    <form action="" method="POST" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="titre">Titre :</label>
-            <input type="text" id="titre" name="titre" required>
+            <label for="titleArticle">Titre :</label>
+            <input type="text" id="titleArticle" name="titleArticle">
+            <span class="error"><?php if (isset($errors['titleArticle'])) echo $errors['titleArticle']; ?></span>
         </div>
 
         <div class="form-group">
-            <label for="date">Date :</label>
-            <input type="date" id="date" name="date" required>
+            <label for="dateArticle">Date :</label>
+            <input type="date" id="dateArticle" name="dateArticle">
+            <span class="error"><?php if (isset($errors['dateArticle'])) echo $errors['dateArticle']; ?></span>
         </div>
 
         <div class="form-group">
-            <label for="image">Image :</label>
-            <input type="file" id="image" name="image" accept="image/*" required>
+            <label for="pictureArticle">Image :</label>
+            <input type="file" id="pictureArticle" name="pictureArticle" accept="image/*">
+            <span class="error"><?php if (isset($errors['pictureArticle'])) echo $errors['pictureArticle']; ?></span>
         </div>
 
         <div class="form-group">
-            <label for="description">Description :</label>
-            <textarea id="description" name="description" required></textarea>
+            <label for="contentArticle">Contenu :</label>
+            <textarea id="contentArticle" name="contentArticle"></textarea>
+            <span class="error"><?php if (isset($errors['contentArticle'])) echo $errors['contentArticle']; ?></span>
+        </div>
+
+        <div class="form-group">
+            <label for="linkArticle">Liens d'acces :</label>
+            <input type="text" id="linkArticle" name="linkArticle">
         </div>
 
         <div class="form-group">
@@ -37,52 +47,44 @@
             <th>TITRE</th>
             <th>DATE</th>
             <th>PHOTO</th>
-            <th>DESCRIPTION</th>
+            <th>CONTENU</th>
             <th></th>
             <th></th>
         </tr>
-        <tr class="testtest">
-            <td>1</td>
-            <td>nouvel album</td>
-            <td>20-10-2023</td>
-            <td>band-photo.jpg</td>
-            <td class="description-dashboard">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, odio asperiores debitis accusantium incidunt nihil voluptate dolorem repellendus dolore soluta blanditiis cum iste quaerat doloremque vero neque, id numquam ullam!</td>
-            <td><button class="modify-button">Modifier</button></td>
-            <td><button class="delete-button">Supprimer</button></td>
-        </tr>
+        <?php foreach (News::getNews() as $news) { ?>
         <tr>
-            <td>2</td>
-            <td>Concert a Lyon</td>
-            <td>12-09-2023</td>
-            <td>photo-concert.jpg</td>
-            <td class="description-dashboard">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni dicta magnam quas laborum quam deleniti distinctio cum suscipit, dolorem reiciendis incidunt consectetur cupiditate amet dolores labore iure, provident debitis officiis.</td>
+            <td><?= $news['news_id'] ?></td>
+            <td><?= $news['news_title'] ?></td>
+            <td><?= $news['dateNews'] ?></td>
+            <td><img src="data:image/png;base64,<?= $news["news_picture"] ?>" alt=""></td>
+            <td class="description-dashboard"><?= $news['news_content'] ?></td>
             <td><button class="modify-button">Modifier</button></td>
             <td><button class="delete-button">Supprimer</button></td>
         </tr>
-        <!-- Ajoutez d'autres lignes de données ici -->
+        <?php } ?>
     </table>
 </div>
 
 <div class="tableSmartphone">
     <div class="id">
-        <p>ID: 1</p>
+        <p>ID: <?= $news['news_id'] ?></p>
     </div>
     <div class="mainCard">
         <div class="titlesCard">
             <p>Titre :</p>
-            <span>Nouvel album</span>
+            <span><?= $news['news_title'] ?></span>
         </div>
         <div class="titlesCard">
             <p>Date :</p>
-            <span>20-10-2023</span>
+            <span><?= $news['dateNews'] ?></span>
         </div>
         <div class="titlesCard">
             <p>Image :</p>
-            <span>band-photo.jpeg</span>
+            <span><img src="data:image/png;base64,<?= $news["news_picture"] ?>" alt=""></span>
         </div>
         <div class="titlesCard containerChar">
             <p>Description :</p>
-            <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque obcaecati illum quia ipsa aut. Hic, vero nesciunt a nostrum nam facere omnis dolorum? Quo dolorem, reiciendis modi magni amet harum.</span>
+            <span><?= $news['news_content'] ?></span>
         </div>
         <div class="buttons">
             <button class="modify-button">Modifier</button>
