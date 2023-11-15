@@ -56,7 +56,7 @@
             <td><?= $news['news_id'] ?></td>
             <td><?= $news['news_title'] ?></td>
             <td><?= $news['dateNews'] ?></td>
-            <td><img src="data:image/png;base64,<?= $news["news_picture"] ?>" alt=""></td>
+            <td><img src="../assets/img/photo-bdd/news/<?= $news["news_picture"] ?>" alt=""></td>
             <td class="description-dashboard"><?= $news['news_content'] ?></td>
             <td><button class="modify-button">Modifier</button></td>
             <td><button class="delete-button">Supprimer</button></td>

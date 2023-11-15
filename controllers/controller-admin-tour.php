@@ -63,19 +63,46 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // si le tableau d'erreurs est vide, on ajoute la date de concert
-    if (empty($errors)) {
-        // nous récupérons le contenu du fichier image
-        $pictureIn64 = file_get_contents($_FILES['picture']['tmp_name']);
-        // nous encodons le contenu du fichier image en base64
-        $pictureIn64 = base64_encode($pictureIn64);
-        // nous ajoutons la date de concert
-        if (Tour::addTour($_POST, $pictureIn64)) {
-            header('Location: controller-admin-tour.php');
-        } else {
-            $errors['bdd'] = 'Erreur lors de l\'ajout de la date de concert';
-        }
+
+// si le tableau d'erreur est vide, nous pouvons ajouter l'album
+if (empty($errors)) {
+    // Nous indiquons le chemin du répertoire dans lequel les images vont être téléchargés.
+    $directory = "../assets/img/photo-bdd/tour/";
+
+    // Nous allons définir $new_name qui aura un nom d'image unique avec : la fonction uniqid() et une extension '.webp'
+    $new_name = uniqid() . '.webp';
+
+    if (move_uploaded_file($_FILES["picture"]["tmp_name"], $directory . $new_name)) {
+        // nous ajoutons l'article et nous récupérons l'id de l'article
+        $article_id = Tour::addTour($_POST, $new_name);
+
+        // nous redirigeons vers la page d'accueil
+        header('Location: controller-admin-tour.php');
+    } else {
+        $errors['addTour'] = 'Erreur lors de l\'ajout du concert';
     }
+} else {
+    $uploadMessage = 'Erreur lors de l\'upload de votre fichier';
+}
+
+
+
+
+
+
+    // si le tableau d'erreurs est vide, on ajoute la date de concert
+    // if (empty($errors)) {
+    //     // nous récupérons le contenu du fichier image
+    //     $pictureIn64 = file_get_contents($_FILES['picture']['tmp_name']);
+    //     // nous encodons le contenu du fichier image en base64
+    //     $pictureIn64 = base64_encode($pictureIn64);
+    //     // nous ajoutons la date de concert
+    //     if (Tour::addTour($_POST, $pictureIn64)) {
+    //         header('Location: controller-admin-tour.php');
+    //     } else {
+    //         $errors['bdd'] = 'Erreur lors de l\'ajout de la date de concert';
+    //     }
+    // }
 }
 
 include "../views/admin-tour.php";

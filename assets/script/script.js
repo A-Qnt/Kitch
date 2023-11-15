@@ -48,34 +48,3 @@ function detailsAlbum(album) {
         info.style.display = "none";
     }
 };
-
-
-//garder les données quand le formaulire n'est pas complet 
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Restaure les valeurs des champs du formulaire depuis le stockage local lors du chargement de la page
-    document.getElementById('titleArticle').value = localStorage.getItem('titleArticle') || '';
-    document.getElementById('dateArticle').value = localStorage.getItem('dateArticle') || '';
-    document.getElementById('contentArticle').value = localStorage.getItem('contentArticle') || '';
-    document.getElementById('linkArticle').value = localStorage.getItem('linkArticle') || '';
-});
-
-// Enregistre les valeurs des champs dans le stockage local lors de la saisie
-document.getElementById('formArticle').addEventListener('input', function (event) {
-    localStorage.setItem(event.target.name, event.target.value);
-});
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Restaure les valeurs des champs du formulaire depuis le stockage local lors du chargement de la page
-    document.getElementById('titleArticle').value = localStorage.getItem('titleArticle') || '';
-    document.getElementById('dateArticle').value = localStorage.getItem('dateArticle') || '';
-    document.getElementById('contentArticle').value = localStorage.getItem('contentArticle') || '';
-    document.getElementById('linkArticle').value = localStorage.getItem('linkArticle') || '';
-});
-
-// Enregistre les valeurs des champs dans le stockage local lors de la saisie
-document.getElementById('formArticle').addEventListener('input', function (event) {
-    localStorage.setItem(event.target.name, event.target.value);
-});

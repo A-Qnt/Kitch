@@ -25,7 +25,7 @@
                 <label for="track">Pistes :</label>
                 <button id="buttonAdd" type="button">+</button>
                 <button id="buttonDelete" type="button">-</button>
-                <span class="error"><?php if (isset($errors['tracks'] )) echo $errors['tracks']  ?></span>
+                <span class="error"><?php if (isset($errors['tracks'])) echo $errors['tracks']  ?></span>
             </div>
         </div>
 
@@ -38,9 +38,9 @@
         <div class="form-group">
             <button type="submit" class="btn">Ajouter</button>
         </div>
-        <span class="error"><?php if (isset($errors['addTheAlbum'] )) echo $errors['addTheAlbum']  ?></span>
-        <span class="error"><?php if (isset($uploadMessage )) echo $uploadMessage  ?></span>
-       
+        <span class="error"><?php if (isset($errors['addTheAlbum'])) echo $errors['addTheAlbum']  ?></span>
+        <span class="error"><?php if (isset($uploadMessage)) echo $uploadMessage  ?></span>
+
     </form>
 </div>
 <div class="tableau">
@@ -63,22 +63,9 @@
                 <td><?= $album['release'] ?></td>
                 <td>
                     <ol class=" cols">
-                        <div class="col1">
-                            <li>azerty</li>
-                            <li>azerty</li>
-                            <li>azerty</li>
-                            <li>azerty</li>
-                            <li>azerty</li>
-                            <li>azerty</li>
-                        </div>
-                        <div class="col2">
-                            <li>azerty</li>
-                            <li>azerty</li>
-                            <li>azerty</li>
-                            <li>azerty</li>
-                            <li>azerty</li>
-                            <li>azerty</li>
-                        </div>
+                        <?php foreach (Album::getTracksByAlbum($album["album_id"]) as $track) { ?>
+                            <li class="liNone"><?= $track["track_title"] ?></li>
+                        <?php } ?>
                     </ol>
                 </td>
                 <td><?= $album['album_description'] ?></td>
@@ -90,58 +77,37 @@
 </div>
 
 <div class="tableSmartphone">
-    <div class="id">
-        <p>ID: 1</p>
-    </div>
-    <div class="mainCard">
-        <div class="titlesCard">
-            <p>Date :</p>
-            <span>20-10-2023</span>
+    <?php foreach (Album::getAlbum() as $album) { ?>
+        <div class="id">
+            <p>ID: <?= $album['album_id'] ?></p>
         </div>
-        <div class="titlesCard">
-            <p>Image :</p>
-            <span>band-photo.jpeg</span>
+        <div class="mainCard">
+            <div class="titlesCard">
+                <p>Titre :</p>
+                <span><?= $album['album_title'] ?></span>
+            </div>
+            <div class="titlesCard">
+                <p>Image :</p>
+                <span><img src="../assets/img/photo-bdd/album/<?= $album['album_cover'] ?>"></span>
+            </div>
+            <div class="titlesCard">
+                <p>Date :</p>
+                <span><?= $album['release'] ?></span>
+            </div>
+            <div class="titlesCard" id="containerChar">
+                <ol>
+                    <?php foreach (Album::getTracksByAlbum($album["album_id"]) as $track) { ?>
+                        <li class="liNone"><?= $track["track_title"] ?></li>
+                    <?php } ?>
+                </ol>
+            </div>
+            <div class="buttons">
+                <button class="modify-button">Modifier</button>
+                <button class="delete-button">Supprimer</button>
+            </div>
         </div>
-        <div class="titlesCard">
-            <p>Salle :</p>
-            <span>Supersonic</span>
-        </div>
-        <div class="titlesCard" id="containerChar">
-            <p>Ville :</p>
-            <span id="maxchar3">Paris, France</span>
-        </div>
-        <div class="buttons">
-            <button class="modify-button">Modifier</button>
-            <button class="delete-button">Supprimer</button>
-        </div>
-    </div>
+    <?php } ?>
 </div>
-<div class="tableSmartphone">
-    <div class="id">
-        <p>ID: 2</p>
-    </div>
-    <div class="mainCard">
-        <div class="titlesCard">
-            <p>Date :</p>
-            <span>20-10-2023</span>
-        </div>
-        <div class="titlesCard">
-            <p>Image :</p>
-            <span>band-photo.jpeg</span>
-        </div>
-        <div class="titlesCard">
-            <p>Salle :</p>
-            <span>Supersonic</span>
-        </div>
-        <div class="titlesCard" id="containerChar">
-            <p>Ville :</p>
-            <span id="maxchar3">Paris, France</span>
-        </div>
-        <div class="buttons">
-            <button class="modify-button">Modifier</button>
-            <button class="delete-button">Supprimer</button>
-        </div>
-    </div>
-</div>
+
 
 <?php include "components/footer.php" ?>

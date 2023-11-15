@@ -19,6 +19,7 @@ body {
 
 .tableSmartphone {
     display: none;
+    margin-top: 20px;
 }
 
 table {
@@ -27,9 +28,10 @@ table {
     border: 1px solid black;
 
 }
- td img {
+
+td img {
     max-height: 100px;
- }
+}
 
 th,
 td {
@@ -48,23 +50,18 @@ th {
 td {
     color: black;
     font-size: 28px;
-    
+
 }
 
 .cols {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 300px;
 }
 
-.col1,
-.col2 {
-    width: 150px;
-}
 
-.col1 li,
-.col2 li {
-    width: 100%;
-}
+
 
 td ol li {
     width: 300px;
@@ -80,10 +77,16 @@ tr:nth-child(odd) {
     background-color: #D9D9D9;
 }
 
-body > div.tableau > table > tbody > tr.testtest{
+body>div.tableau>table>tbody>tr.testtest {
     color: green;
 }
 
+.modify-button:hover {
+    background-color: #3e8e41;
+}
+.delete-button:hover {
+    background-color: #f81a0b;
+}
 
 .modify-button {
     background-color: #4CAF50;
@@ -95,6 +98,7 @@ body > div.tableau > table > tbody > tr.testtest{
     text-decoration: none;
     display: inline-block;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .delete-button {
@@ -107,6 +111,7 @@ body > div.tableau > table > tbody > tr.testtest{
     text-decoration: none;
     display: inline-block;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .description-dashboard {
@@ -127,7 +132,7 @@ body > div.tableau > table > tbody > tr.testtest{
     cursor: pointer;
 }
 
-.textoverflow{
+.textoverflow {
     background-color: red;
     width: 500px;
     height: 100px;
@@ -145,7 +150,7 @@ body > div.tableau > table > tbody > tr.testtest{
     max-width: 600px;
     padding: 20px;
     background-color: #000000;
-    
+
 }
 
 /* #formAlbum, #formDate, #formArticle {
@@ -182,7 +187,8 @@ textarea {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1); /* Inverser les couleurs pour rendre l'icône blanche */
+    filter: invert(1);
+    /* Inverser les couleurs pour rendre l'icône blanche */
 }
 
 .error {
@@ -199,7 +205,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-style: italic;
 }
 
-
+.liNone {
+    list-style: none;
+}
 
 
 
@@ -233,13 +241,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .mainCard {
         width: 100%;
         background-color: #D9D9D9;
+        margin-bottom: 20px;
+        border-radius: 0 0 10px 10px;
     }
+
+
 
     #limited-span {
         color: white;
     }
 
-
+    .liNone {
+        list-style: none;
+    }
 
     .titlesCard {
         display: flex;
@@ -260,6 +274,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .titlesCard span {
         font-size: 30px;
         overflow: hidden;
+    }
+
+    .titlesCard ol li {
+        color: rgb(0, 0, 0);
+        font-size: 30px;
+        
+        list-style: none;
     }
 
 

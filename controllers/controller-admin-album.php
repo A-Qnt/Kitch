@@ -80,9 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     }
                 }
 
-                
-
-
                 // nous redirigeons vers la page d'accueil
                 header('Location: controller-admin-album.php');
             } else {

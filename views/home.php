@@ -15,14 +15,14 @@
     <?php foreach (News::getNews() as $news) {  ?>
         <a href="<?= $news["news_link"] ?>">
             <div class="card">
-                <img src="data:image/jpeg;base64,<?= $news["news_picture"] ?>" alt="Image News" class="card-image">
+                <img src="../assets/img/photo-bdd/news/<?= $news["news_picture"] ?>" alt="image des news" class="card-image">
                 <h2 class="card-title"><?= $news["news_title"] ?></h2>
                 <p class="card-description"><?= $news["news_content"] ?></p>
                 <p class="card-date"><?= $news["dateNews"] ?></p>
             </div>
         </a>
     <?php } ?>
-    
+
 </div>
 
 <?php include "components/footer.php" ?>

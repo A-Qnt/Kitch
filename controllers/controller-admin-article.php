@@ -55,19 +55,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // si le tableau d'erreur est vide, nous pouvons ajouter l'article
+
+    // si le tableau d'erreur est vide, nous pouvons ajouter l'album
     if (empty($errors)) {
-        // nous récupérons le contenu du fichier image
-        $picture = file_get_contents($_FILES['pictureArticle']['tmp_name']);
-        // nous encodons le contenu du fichier image en base64
-        $pictureIn64 = base64_encode($picture);
-        // nous ajoutons la date de l'article
-        if (News::addNews($_POST, $pictureIn64)) {
+        // Nous indiquons le chemin du répertoire dans lequel les images vont être téléchargés.
+        $directory = "../assets/img/photo-bdd/news/";
+
+        // Nous allons définir $new_name qui aura un nom d'image unique avec : la fonction uniqid() et une extension '.webp'
+        $new_name = uniqid() . '.webp';
+
+        if (move_uploaded_file($_FILES["pictureArticle"]["tmp_name"], $directory . $new_name)) {
+            // nous ajoutons l'article et nous récupérons l'id de l'article
+            $article_id = News::addNews($_POST, $new_name);
+
+            // nous redirigeons vers la page d'accueil
             header('Location: controller-admin-article.php');
         } else {
-            $errors['bdd'] = 'Erreur lors de l\'ajout de l\'article';
+            $errors['addTheAlbum'] = 'Erreur lors de l\'ajout de l\'article';
         }
+    } else {
+        $uploadMessage = 'Erreur lors de l\'upload de votre fichier';
     }
 }
+
+
+
 
 include "../views/admin-article.php";

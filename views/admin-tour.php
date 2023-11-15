@@ -1,8 +1,6 @@
 <?php include "components/head.php" ?>
 <?php include "components/navbar-admin.php" ?>
-<div class="addComposantbutton">
-    <button id="addTourButton">Ajouter une date de concert</button>
-</div>
+
 <div class="form-error"><?= $errors['bdd'] ?? '' ?></div>
 <div class="addArticleDate" id="formTour">
     <form action="" method="POST" enctype="multipart/form-data">
@@ -55,7 +53,7 @@
         <?php foreach (Tour::getTour() as $tour) { ?>
             <tr>
                 <td><?= $tour['tour_id'] ?></td>
-                <td><img src="data:image/png;base64,<?= $tour["tour_picture"] ?>" alt=""></td>
+                <td><img src="../assets/img/photo-bdd/tour/<?= $tour["tour_picture"] ?>" alt=""></td>
                 <td><?= $tour["date"] ?></td>
                 <td><?= $tour["tour_room"] ?></td>
                 <td><?= $tour["tour_city"] ?>, <?= $tour["tour_country"] ?></td>
@@ -78,7 +76,7 @@
             </div>
             <div class="titlesCard">
                 <p>Image :</p>
-                <img src="data:image/png;base64,<?= $tour["tour_picture"] ?>" alt="">
+                <img src="../assets/img/photo-bdd/tour/<?= $tour["tour_picture"] ?>" alt="">
             </div>
             <div class="titlesCard">
                 <p>Salle :</p>
