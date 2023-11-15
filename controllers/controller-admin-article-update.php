@@ -5,8 +5,34 @@ require_once "../helpers/Database.php";
 require_once "../helpers/Form.php";
 require_once "../models/News.php";
 
-//Nous definissons un tableau d'erreur
+// Nous définissons un tableau d'erreurs
 $errors = [];
+
+// Nous vérifions que l'id est bien présent dans l'url et qu'il n'est pas vide
+if (isset($_GET['idNews']) && !empty($_GET['idNews'])) {
+    // Nous vérifions également que l'id est bien un nombre entier à l'aide de la fonction prédéfinie ctype_digit().
+    // si ce n'est pas le cas nous redidiectons l'utilisateur sur la page admin-article.php
+    if (!ctype_digit($_GET['idNews'])) {
+        header('Location: ../controllers/controller-admin-article.php');
+        exit();
+    } else {
+        // Si c'est le cas nous créons une variable $idNews qui contiendra l'id de l'article
+        $idNews = $_GET['idNews'];
+        // Nous allons également appeler la méthode getNewsById() pour récupérer les informations de l'article
+        $news = new News();
+        $newsDetails = $news->getNewsById($idNews);
+        var_dump($newsDetails);
+        // Nous vérifions que l'article existe
+        if ($newsDetails === false) {
+            header('Location: ../controllers/controller-admin-article.php');
+            exit();
+        }
+
+    }
+} else {
+    header('Location: ../controllers/controller-admin-article.php');
+    exit();
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //controle du titre : si vide
@@ -55,31 +81,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-
-
     // si le tableau d'erreur est vide, nous pouvons ajouter l'album
     if (empty($errors)) {
-        // Nous indiquons le chemin du répertoire dans lequel les images vont être téléchargés.
-        $directory = "../assets/img/photo-bdd/news/";
-
-        // Nous allons définir $new_name qui aura un nom d'image unique avec : la fonction uniqid() et une extension '.webp'
-        $new_name = uniqid() . '.webp';
-
-        if (move_uploaded_file($_FILES["pictureArticle"]["tmp_name"], $directory . $new_name)) {
-            // nous ajoutons l'article et nous récupérons l'id de l'article
-            $article_id = News::addNews($_POST, $new_name);
-
-            // nous redirigeons vers la page d'accueil
-            header('Location: controller-admin-article.php');
+        //instanciation de la classe News
+        $news = new News();
+        // utilisation de la méthode updateNews() pour modifier l'article
+        if ($news->updateNews($_POST)) {
+            // si la modification a réussi, nous redirigeons l'utilisateur sur la page admin-article.php
+            header('Location: ../controllers/controller-admin-article.php');
+            exit();
         } else {
-            $errors['addTheAlbum'] = 'Erreur lors de l\'ajout de l\'article';
+            // sinon nous affichons un message d'erreur
+            $errors['update'] = 'Erreur lors de la modification';
         }
-    } else {
-        $uploadMessage = 'Erreur lors de l\'upload de votre fichier';
     }
 }
 
 
-
-
-include "../views/admin-article.php";
+include "../views/admin-article-update.php";

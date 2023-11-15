@@ -3,15 +3,16 @@
 <div class="form-error"><?= $errors['bdd'] ?? '' ?></div>
 <div class="addArticleForm" id="formArticle">
     <form action="" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="idArticle" value="<?= $newsDetails['news_id'] ?>">
         <div class="form-group">
             <label for="titleArticle">Titre :</label>
-            <input type="text" id="titleArticle" name="titleArticle">
+            <input type="text" id="titleArticle" name="titleArticle" value="<?= isset($_POST['titleArticle']) ? $_POST['titleArticle'] : $newsDetails['news_title']?>">
             <span class="error"><?php if (isset($errors['titleArticle'])) echo $errors['titleArticle']; ?></span>
         </div>
 
         <div class="form-group">
             <label for="dateArticle">Date :</label>
-            <input type="date" id="dateArticle" name="dateArticle">
+            <input type="date" id="dateArticle" name="dateArticle" value="<?= isset($_POST['dateArticle']) ? $_POST['dateArticle'] : $newsDetails['dateNews']?>">
             <span class="error"><?php if (isset($errors['dateArticle'])) echo $errors['dateArticle']; ?></span>
         </div>
 
@@ -23,13 +24,13 @@
 
         <div class="form-group">
             <label for="contentArticle">Contenu :</label>
-            <textarea id="contentArticle" name="contentArticle"></textarea>
+            <textarea id="contentArticle" name="contentArticle" ><?= isset($_POST['contentArticle']) ? $_POST['contentArticle'] : $newsDetails['news_content']?></textarea>
             <span class="error"><?php if (isset($errors['contentArticle'])) echo $errors['contentArticle']; ?></span>
         </div>
 
         <div class="form-group">
             <label for="linkArticle">Liens d'acces :</label>
-            <input type="text" id="linkArticle" name="linkArticle">
+            <input type="text" id="linkArticle" name="linkArticle" value="<?= isset($_POST['linkArticle']) ? $_POST['linkArticle'] : $newsDetails['news_link']?>">
         </div>
 
         <div class="form-group">
