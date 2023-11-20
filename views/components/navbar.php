@@ -6,6 +6,7 @@
 
   <!-- Navbar -->
   <nav class="navbar">
+  <a href="../controllers/controller-home.php">HOME</a>
     <a href="../controllers/controller-band.php">BAND</a>
     <a href="../controllers/controller-tour.php">TOUR</a>
     <a href="../controllers/controller-project.php">PROJET</a>

@@ -1,6 +1,8 @@
 <?php include "components/head.php" ?>
 <?php include "components/navbar.php" ?>
-
+<div class="titleband">
+    <h2>Les projets</h2>
+</div>
 <div class="album-container"><!--div qui contient les bandeaux-->
     <div class="albums">
         <?php foreach (Album::getAlbum() as $album) { ?>
@@ -35,6 +37,9 @@
             </div>
         </div>
     <?php } ?>
+</div>
+<div class="vide">
+    <br>
 </div>
 
 <?php include "components/footer.php" ?>

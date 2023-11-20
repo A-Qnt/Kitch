@@ -7,6 +7,10 @@
             <p>Écoutez notre dernier album intitulé "New Strife lands"</p>
             <a href="https://open.spotify.com/intl-fr/album/6MYTITORR44QTxG6N6hfkp" class="btnspotify">Écouter sur Spotify</a>
     </div>
+    <div class="contactUs">
+        <h3>Vous voulez du KITCH chez vous ?</h3>
+        <p>N"hesitez pas à nous contacter <a href="../controllers/controller-contact.php">ici</a></p>
+    </div>
 </div>
 <div class="titleband">
     <h2>Actualités</h2>

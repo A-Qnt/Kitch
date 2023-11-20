@@ -7,7 +7,7 @@
     <?php foreach (Tour::getTour() as $tour) { ?>
             <div class="ticket">
                 <div class="leftSide">
-                    <img src="../assets/img/photo-bdd/tour/<?= $tour["tour_picture"] ?>" alt="">
+                    <a href="https://www.billetreduc.com/"><img src="../assets/img/photo-bdd/tour/<?= $tour["tour_picture"] ?>" alt=""></a>
                 </div>
                 <div class="rightSide">
                     <div class="date">
