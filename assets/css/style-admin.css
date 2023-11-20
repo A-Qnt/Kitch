@@ -173,6 +173,7 @@ body>div.tableau>table>tbody>tr.testtest {
 input[type="text"],
 input[type="date"],
 input[type="file"],
+input[type="password"],
 textarea {
     padding-left: 10px;
     padding: 5px 0;

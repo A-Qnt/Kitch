@@ -4,6 +4,15 @@ require_once "../helpers/Database.php";
 require_once "../helpers/Form.php";
 require_once "../models/Album.php";
 
+// j'ouvre ma session
+session_start();
+
+// si l'utilisateur est déjà connecté, je le redirige vers la page admin
+if (!isset($_SESSION['admin'])) {
+    header('Location: ../controllers/controller-admin-login.php');
+    exit();
+}
+
 //Nous definissons un tableau d'erreur
 $errors = [];
 
