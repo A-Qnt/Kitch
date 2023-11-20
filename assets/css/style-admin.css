@@ -209,6 +209,24 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     list-style: none;
 }
 
+.modale {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: auto;
+    background-color: #D9D9D9;
+    text-align: center;
+    border-radius: 20px;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modale p {
+    font-size: 40px;
+}
 
 
 /* style pour l'affichage sur smartphone */

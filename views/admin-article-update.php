@@ -1,5 +1,6 @@
 <?php include "components/head.php" ?>
 <?php include "components/navbar-admin.php" ?>
+<a href="../controllers/controller-admin-article.php"><button class="btnret">Ajouter un nouvel article</button></a>
 <div class="form-error"><?= $errors['bdd'] ?? '' ?></div>
 <div class="addArticleForm" id="formArticle">
     <form action="" method="POST" enctype="multipart/form-data">
@@ -34,7 +35,7 @@
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn">Ajouter</button>
+            <button type="submit" class="btn">Modifier</button>
         </div>
     </form>
 </div>

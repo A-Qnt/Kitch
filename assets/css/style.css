@@ -448,7 +448,7 @@ header {
     font-family: 'Franklin Gothic Heavy';
     font-size: 45px;
     font-weight: 700;
-    color: #161616;
+    color: rgb(27, 27, 27);
     
 }
 
@@ -673,6 +673,22 @@ textarea {
 }
 
 .btn:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+.btnret {
+    text-align: center;
+    font-size: 30px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: solid 1px white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnret:hover {
     background-color: #ffffff;
     color: black;
 }

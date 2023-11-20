@@ -1,5 +1,15 @@
 <?php include "components/head.php" ?>
 <?php include "components/navbar-admin.php" ?>
+
+<div class="modale" id="modale">
+    <p>Voulez-vous vraiment supprimer cet article ?</p>
+    <button class="btnret" id="cancel">Annuler</button>
+    <form action="../controllers/controller-admin-article-delete.php" method="POST">
+        <input type="hidden" id="newsToDelete" name="newsToDelete">
+        <button class="btnret" id="confirm">Confirmer</button>
+    </form>
+</div>
+
 <div class="form-error"><?= $errors['bdd'] ?? '' ?></div>
 <div class="addArticleForm" id="formArticle">
     <form action="" method="POST" enctype="multipart/form-data">
@@ -56,7 +66,7 @@
                 <td><img src="../assets/img/photo-bdd/news/<?= $news["news_picture"] ?>" alt=""></td>
                 <td class="description-dashboard"><?= $news['news_content'] ?></td>
                 <td><a href="../controllers/controller-admin-article-update.php?idNews=<?= $news['news_id'] ?>"><button class="modify-button">Modifier</button></a></td>
-                <td> <a href="#"><button class="delete-button">Supprimer</button></a></td>
+                <td> <a href="#"><button class="delete-button" id="deleteButton" onclick="showModale(this)" data-id ="<?= $news['news_id'] ?>" >Supprimer</button></a></td>
             </tr>
         <?php } ?>
     </table>
@@ -85,7 +95,7 @@
         </div>
         <div class="buttons">
             <a href="../controllers/controller-admin-article-update.php"><button class="modify-button">Modifier</button></a>
-            <a href="#"><button class="delete-button">Supprimer</button></a>
+            <a href="#"><button class="delete-button" id="deleteButton">Supprimer</button></a>
         </div>
     </div>
 </div>

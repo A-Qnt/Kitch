@@ -48,3 +48,30 @@ function detailsAlbum(album) {
         info.style.display = "none";
     }
 };
+
+
+
+// fonction pour afficher la modale de confirmation de suppression de l'article
+document.addEventListener('DOMContentLoaded', function () {
+    let modale = document.getElementById('modale');
+    let confirm = document.getElementById('confirm');
+    let cancel = document.getElementById('cancel');
+    let deleteButton = document.getElementById('deleteButton');
+
+   
+
+    cancel.addEventListener('click', function(){
+        modale.style.display = 'none';
+    })
+
+    confirm.addEventListener('click', function(){
+
+    })
+
+})
+
+ function showModale(element){
+        modale.style.display = 'block';
+        console.log(element.dataset.id);
+        document.querySelector('#newsToDelete').value=element.dataset.id
+    }

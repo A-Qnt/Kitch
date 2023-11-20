@@ -21,7 +21,7 @@ if (isset($_GET['idNews']) && !empty($_GET['idNews'])) {
         // Nous allons également appeler la méthode getNewsById() pour récupérer les informations de l'article
         $news = new News();
         $newsDetails = $news->getNewsById($idNews);
-        var_dump($newsDetails);
+    
         // Nous vérifions que l'article existe
         if ($newsDetails === false) {
             header('Location: ../controllers/controller-admin-article.php');
