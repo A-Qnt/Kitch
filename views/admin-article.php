@@ -9,6 +9,9 @@
         <button class="btnret" id="confirm">Confirmer</button>
     </form>
 </div>
+<form action="../controllers/controller-admin-login.php">
+    <button class="btnret">deconnexion</button>
+</form>
 
 <div class="form-error"><?= $errors['bdd'] ?? '' ?></div>
 <div class="addArticleForm" id="formArticle">
@@ -66,7 +69,7 @@
                 <td><img src="../assets/img/photo-bdd/news/<?= $news["news_picture"] ?>" alt=""></td>
                 <td class="description-dashboard"><?= $news['news_content'] ?></td>
                 <td><a href="../controllers/controller-admin-article-update.php?idNews=<?= $news['news_id'] ?>"><button class="modify-button">Modifier</button></a></td>
-                <td> <a href="#"><button class="delete-button" id="deleteButton" onclick="showModale(this)" data-id ="<?= $news['news_id'] ?>" >Supprimer</button></a></td>
+                <td> <a href="#"><button class="delete-button" id="deleteButton" onclick="showModale(this)" data-id="<?= $news['news_id'] ?>">Supprimer</button></a></td>
             </tr>
         <?php } ?>
     </table>

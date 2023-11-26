@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-    // si le tableau d'erreur est vide, nous pouvons ajouter l'album
+    // si le tableau d'erreur est vide, nous pouvons ajouter l'article
     if (empty($errors)) {
         // Nous indiquons le chemin du répertoire dans lequel les images vont être téléchargés.
         $directory = "../assets/img/photo-bdd/news/";
@@ -87,7 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $uploadMessage = 'Erreur lors de l\'upload de votre fichier';
     }
 }
-
 
 
 

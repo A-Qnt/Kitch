@@ -12,6 +12,9 @@
         <p>N"hesitez pas à nous contacter <a href="../controllers/controller-contact.php">ici</a></p>
     </div>
 </div>
+<div class="iframe">
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/32gVpPbO_4c?si=fwRWbi1kvseoDccP&amp;controls=0&amp;start=4??autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 <div class="titleband">
     <h2>Actualités</h2>
 </div>

@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 //Sccript pour ajouter ou supprimer des champs pour les pistes d'album
 
 document.addEventListener('DOMContentLoaded', function () {

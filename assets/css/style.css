@@ -147,7 +147,7 @@ header {
     cursor: pointer;
 }
 
-
+/* HOME PAGE */
 /* cards */
 .cards {
     display: flex;
@@ -273,6 +273,14 @@ header {
 
 .btnspotify:hover {
     background-color: #188b40;
+}
+
+.iframe {
+    width: 100vw;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 
