@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // nous redirigeons vers la page d'accueil
             header('Location: controller-admin-article.php');
         } else {
-            $errors['addTheAlbum'] = 'Erreur lors de l\'ajout de l\'article';
+            $errors['addTheArticle'] = 'Erreur lors de l\'ajout de l\'article';
         }
     } else {
         $uploadMessage = 'Erreur lors de l\'upload de votre fichier';
