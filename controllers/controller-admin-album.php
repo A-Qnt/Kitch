@@ -80,11 +80,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // nous ajoutons l'album et nous récupérons son id pour l'ajouter aux tracks
             $album_id = Album::addAlbum($_POST, $new_name);
 
+            // si l'album a bien été ajouté, nous ajoutons les tracks
             if ($album_id > 0) {
-
+                // nous parcourons le tableau $_POST pour récupérer les tracks et les ajouter à la base de données 
                 foreach ($_POST as $key => $value) {
+                    // nous vérifions si la clé contient le mot 'track'
                     if (preg_match('#track#', $key)) {
+                        // nous récupérons la valeur de la clé et nous la stockons dans une variable
                         $track = $value;
+                        // nous ajoutons la track à la base de données en utilisant la méthode statique addTrack() de la classe Album
                         Album::addTrack($track, $album_id);
                     }
                 }
@@ -97,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             $uploadMessage = 'Erreur lors de l\'upload de votre fichier';
         }
-        var_dump($uploadMessage);
+
     }
 }
 

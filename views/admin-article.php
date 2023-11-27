@@ -9,9 +9,6 @@
         <button class="btnret" id="confirm">Confirmer</button>
     </form>
 </div>
-<form action="../controllers/controller-admin-login.php">
-    <button class="btnret">deconnexion</button>
-</form>
 
 <div class="form-error"><?= $errors['bdd'] ?? '' ?></div>
 <div class="addArticleForm" id="formArticle">

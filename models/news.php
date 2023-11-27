@@ -42,7 +42,6 @@ class News
 
     public static function addNews(array $inputs, string $pictureIn64): bool
     {
-        var_dump($inputs);
         try {
             // Creation d'une instance de connexion à la base de données
             $pdo = Database::createInstancePDO();
@@ -124,7 +123,7 @@ class News
             // On exécute la requête, elle sera true si elle a réussi, dans le cas contraire il y aura une exception
             return $stmt->execute();
         } catch (PDOException $e) {
-            // test unitaire pour vérifier que l'animal n'a pas été ajouté et connaitre la raison
+            
             // echo 'Erreur : ' . $e->getMessage();
             return false;
         }
@@ -149,7 +148,7 @@ class News
             // On exécute la requête, elle sera true si elle a réussi, dans le cas contraire il y aura une exception
             return $stmt->execute();
         } catch (PDOException $e) {
-            // test unitaire pour vérifier que l'animal n'a pas été ajouté et connaitre la raison
+           
             // echo 'Erreur : ' . $e->getMessage();
             return false;
         }

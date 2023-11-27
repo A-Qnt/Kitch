@@ -64,7 +64,7 @@ private string $tour_picture;
             // On exécute la requête, elle sera true si elle a réussi, dans le cas contraire il y aura une exception
             return $stmt->execute();
         } catch (PDOException $e) {
-            // test unitaire pour vérifier que l'animal n'a pas été ajouté et connaitre la raison
+            // test unitaire pour vérifier que la date n'a pas été ajouté et connaitre la raison
              //echo 'Erreur : ' . $e->getMessage();
             return false;
         }
