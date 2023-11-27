@@ -3,8 +3,8 @@
 <div class="announcement">
     <img src="../assets/img/photo-album/covernewstrifeland.jpg" alt="Couverture de l'album">
     <div class="announcement-content">
-        <h3>Nouvel Album Disponible</h2>
-            <p>Écoutez notre dernier album intitulé "New Strife lands"</p>
+        <h3>Le dernier née de KITCH </h2>
+            <p>Écoutez notre dernier album intitulé "New Strife Lands"</p>
             <a href="https://open.spotify.com/intl-fr/album/6MYTITORR44QTxG6N6hfkp" class="btnspotify">Écouter sur Spotify</a>
     </div>
     <div class="contactUs">
